@@ -1,5 +1,5 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulateur 4 axes V23 — panneaux stables et alertes discrètes</title><style>
-:root{font:14px system-ui,Arial,sans-serif;color:#e5edf6;background:#081320}*{box-sizing:border-box}body{margin:0}header{padding:16px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid #2d425a}h1{font-size:19px;margin:0}p{margin:7px 0}h2{font-size:15px;margin:0 0 10px}h3{font-size:13px;margin:10px 0}.muted{color:#9fb4c9;font-size:12px}.layout{display:grid;grid-template-columns:minmax(450px,1fr) 380px;gap:12px;padding:12px;max-width:1800px;margin:0 auto}.views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(320px,1fr));gap:12px;min-height:740px}.panel{border:1px solid #2a425a;background:#122135;border-radius:12px;padding:12px}.view{display:flex;flex-direction:column;min-width:0}.view canvas{flex:1;width:100%;min-height:270px;display:block;background:#0b192b;border-radius:7px;touch-action:none}.sidebar{display:flex;flex-direction:column;gap:10px;overflow:visible}.joysticks-fixed{margin-bottom:12px}.joysticks-fixed #axisControls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.joysticks-fixed .axis{margin:0;padding:9px}.joysticks-fixed .joyline{gap:7px}.joysticks-fixed .joy{width:62px;height:62px}.joysticks-fixed .knob{left:18px;top:18px;width:25px;height:25px}.joysticks-fixed .axis .grid2{gap:5px}.joysticks-fixed .axis .grid2 input{padding:5px}.joysticks-fixed .axis .muted{font-size:10px}.joysticks-fixed .axis h3{margin:3px}.joysticks-fixed details{margin-top:8px}.joysticks-fixed summary{cursor:pointer;font-size:12px;color:#a8d5ed}.joysticks-fixed .joyline button{padding:4px 7px}#livePanel{margin:0 0 12px;border-color:#3c7686}#livePanel .gridlive{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#livePanel .live-stat{padding:10px;border:1px solid #34506b;border-radius:8px;background:#0a192b}#livePanel .mathline{font-family:ui-monospace,Consolas,monospace;font-size:12px;overflow-wrap:anywhere;line-height:1.8}#livePanel .mathline b{color:#7cddce}#livePanel .live-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}#livePanel select{width:auto;max-width:180px}#livePanel .live-status{font-weight:600}#livePanel .table-wrapper{overflow:auto;max-width:100%}#livePanel table{width:100%;border-collapse:collapse;font-size:12px}#livePanel th,#livePanel td{padding:6px;text-align:left;white-space:nowrap}@media(max-width:650px){#livePanel .gridlive{grid-template-columns:1fr}}.matrix-table{width:100%;border-collapse:collapse;font-size:11px}.matrix-table td,.matrix-table th{text-align:center;padding:5px}.edit-notice{font-size:12px;color:#b3cddd;margin-top:5px}.view canvas.edit-mode{cursor:move}.view canvas.vertex-mode{cursor:crosshair}.axis{border:1px solid #334b66;border-radius:9px;padding:9px;margin:7px 0}.head,.row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}label.field{font-size:12px;color:#b2c3d6;display:flex;flex-direction:column;gap:3px}input[type=number],input[type=text],select{background:#0a1828;color:#edf6fc;border:1px solid #415976;border-radius:6px;padding:7px;width:100%;min-width:0}input[type=range]{width:100%;accent-color:#38c5bb}button{background:#263c55;border:1px solid #47647e;border-radius:7px;color:#edf6fc;padding:7px 10px;cursor:pointer}button:hover{background:#31526e}button.active,.primary{background:#117d83;border-color:#37bfbe}.buttons{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.info{color:#a3d6de}.warn{color:#ff9a9d}.ok{color:#6cddb0}.joint{color:#fff}.joy{width:76px;height:76px;flex:none;position:relative;border-radius:50%;background:radial-gradient(circle,#28495f,#0b1b2b);border:1px solid #4c728d;touch-action:none}.knob{position:absolute;left:23px;top:23px;width:28px;height:28px;border-radius:50%;background:#50cec2;border:2px solid #bdf4ea;pointer-events:none}.joyline{display:flex;align-items:center;gap:12px;margin:8px 0}.coords{border-collapse:collapse;width:100%;font-size:12px}th,td{border-bottom:1px solid #2b4056;text-align:right;padding:5px 4px}th:first-child,td:first-child{text-align:left}th{color:#a4c7db;position:sticky;top:0;background:#16283d}.explanation{background:#0b1a2d;border-left:3px solid #41bab2;margin:7px 0;padding:9px;font-size:12px;line-height:1.65;overflow-wrap:anywhere}.point{border:1px solid #334b66;border-radius:7px;padding:7px;margin:5px 0}.status{font-size:12px;line-height:1.6}.divider{border-top:1px solid #31465e;margin:12px 0}.scroll{max-height:320px;overflow:auto}.pill{color:#71dacf;font-size:12px}#matrixOutput{max-height:200px;overflow:auto;font-size:11px}#help{color:#aebed0;font-size:12px;line-height:1.6} @media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{max-height:none}}@media(max-width:1300px){.joysticks-fixed #axisControls{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.joysticks-fixed #axisControls{grid-template-columns:repeat(2,minmax(0,1fr))}.views{grid-template-columns:1fr;grid-template-rows:repeat(4,340px)}.layout{grid-template-columns:minmax(0,1fr)}}
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulateur 4 axes V27 — Export calculs tableur</title><style>
+:root{font:14px system-ui,Arial,sans-serif;color:#e5edf6;background:#081320}*{box-sizing:border-box}body{margin:0}header{padding:16px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid #2d425a}h1{font-size:19px;margin:0}p{margin:7px 0}h2{font-size:15px;margin:0 0 10px}h3{font-size:13px;margin:10px 0}.muted{color:#9fb4c9;font-size:12px}.layout{display:grid;grid-template-columns:minmax(450px,1fr) 380px;gap:12px;padding:12px;max-width:1800px;margin:0 auto}.views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(320px,1fr));gap:12px;min-height:740px}.panel{border:1px solid #2a425a;background:#122135;border-radius:12px;padding:12px}.view{display:flex;flex-direction:column;min-width:0}.view canvas{flex:1;width:100%;min-height:270px;display:block;background:#0b192b;border-radius:7px;touch-action:none}.sidebar{display:flex;flex-direction:column;gap:10px;overflow:visible}.joysticks-fixed{margin-bottom:12px}.joysticks-fixed #axisControls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.joysticks-fixed .axis{margin:0;padding:9px}.joysticks-fixed .joyline{gap:7px}.joysticks-fixed .joy{width:62px;height:62px}.joysticks-fixed .knob{left:18px;top:18px;width:25px;height:25px}.joysticks-fixed .axis .grid2{gap:5px}.joysticks-fixed .axis .grid2 input{padding:5px}.joysticks-fixed .axis .muted{font-size:10px}.joysticks-fixed .axis h3{margin:3px}.joysticks-fixed details{margin-top:8px}.joysticks-fixed summary{cursor:pointer;font-size:12px;color:#a8d5ed}.joysticks-fixed .joyline button{padding:4px 7px}#livePanel{margin:0 0 12px;border-color:#3c7686}#livePanel .gridlive{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#livePanel .live-stat{padding:10px;border:1px solid #34506b;border-radius:8px;background:#0a192b}#livePanel .mathline{font-family:ui-monospace,Consolas,monospace;font-size:12px;overflow-wrap:anywhere;line-height:1.8}#livePanel .mathline b{color:#7cddce}#livePanel .live-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}#livePanel select{width:auto;max-width:180px}#livePanel .live-status{font-weight:600}#livePanel .table-wrapper{overflow:auto;max-width:100%}#livePanel table{width:100%;border-collapse:collapse;font-size:12px}#livePanel th,#livePanel td{padding:6px;text-align:left;white-space:nowrap}@media(max-width:650px){#livePanel .gridlive{grid-template-columns:1fr}}.matrix-table{width:100%;border-collapse:collapse;font-size:11px}.matrix-table td,.matrix-table th{text-align:center;padding:5px}.edit-notice{font-size:12px;color:#b3cddd;margin-top:5px}.view canvas.edit-mode{cursor:move}.view canvas.vertex-mode{cursor:crosshair}.view canvas.add-mode{cursor:copy}.vertex-help{font-size:12px;background:#0c2a37;color:#b8e9e3;padding:9px;border-radius:7px;border:1px solid #345f6b;margin:8px 0}.point.selected-vertex{border-color:#ffdc89;background:#273348}.axis{border:1px solid #334b66;border-radius:9px;padding:9px;margin:7px 0}.head,.row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}label.field{font-size:12px;color:#b2c3d6;display:flex;flex-direction:column;gap:3px}input[type=number],input[type=text],select{background:#0a1828;color:#edf6fc;border:1px solid #415976;border-radius:6px;padding:7px;width:100%;min-width:0}input[type=range]{width:100%;accent-color:#38c5bb}button{background:#263c55;border:1px solid #47647e;border-radius:7px;color:#edf6fc;padding:7px 10px;cursor:pointer}button:hover{background:#31526e}button.active,.primary{background:#117d83;border-color:#37bfbe}.buttons{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.info{color:#a3d6de}.warn{color:#ff9a9d}.ok{color:#6cddb0}.joint{color:#fff}.joy{width:76px;height:76px;flex:none;position:relative;border-radius:50%;background:radial-gradient(circle,#28495f,#0b1b2b);border:1px solid #4c728d;touch-action:none}.knob{position:absolute;left:23px;top:23px;width:28px;height:28px;border-radius:50%;background:#50cec2;border:2px solid #bdf4ea;pointer-events:none}.joyline{display:flex;align-items:center;gap:12px;margin:8px 0}.coords{border-collapse:collapse;width:100%;font-size:12px}th,td{border-bottom:1px solid #2b4056;text-align:right;padding:5px 4px}th:first-child,td:first-child{text-align:left}th{color:#a4c7db;position:sticky;top:0;background:#16283d}.explanation{background:#0b1a2d;border-left:3px solid #41bab2;margin:7px 0;padding:9px;font-size:12px;line-height:1.65;overflow-wrap:anywhere}.point{border:1px solid #334b66;border-radius:7px;padding:7px;margin:5px 0}.status{font-size:12px;line-height:1.6}.divider{border-top:1px solid #31465e;margin:12px 0}.scroll{max-height:320px;overflow:auto}.pill{color:#71dacf;font-size:12px}#matrixOutput{max-height:200px;overflow:auto;font-size:11px}#help{color:#aebed0;font-size:12px;line-height:1.6} @media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{max-height:none}}@media(max-width:1300px){.joysticks-fixed #axisControls{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.joysticks-fixed #axisControls{grid-template-columns:repeat(2,minmax(0,1fr))}.views{grid-template-columns:1fr;grid-template-rows:repeat(4,340px)}.layout{grid-template-columns:minmax(0,1fr)}}
 
 /* Barre de commande permanente : sticky par rapport au défilement de la page. */
 .joysticks-fixed{position:sticky;top:0;z-index:100;margin:0 0 12px;background:#122135;box-shadow:0 7px 24px #0009;border-color:#40939a;isolation:isolate}
@@ -89,7 +89,20 @@
 #movementAlert.show-details .alert-more{display:block}
 .joysticks-fixed .axis.axis-blocked{border:1px solid #ee8a61;outline:2px solid #ee8a6199;outline-offset:0;box-shadow:none}
 @media(max-width:620px){.views{grid-template-rows:none}.views>.panel.view{min-height:320px}.views>.panel.view.is-collapsed{min-height:0!important}#movementAlert{bottom:8px;right:8px;width:calc(100vw - 16px)}}
-</style></head><body><header><div><h1>Robot 4 axes — Cinématique et zones par coordonnées</h1><div class="muted">Quatre vues synchronisées · trajectoires angulaires contrôlées · anticollision sur toutes les zones</div></div><div class="buttons"><button id="reset">Angles à zéro</button><button id="export">Exporter configuration JSON</button><button id="import">Importer JSON</button><input id="file" type="file" accept=".json" hidden></div></header><main class="layout"><section><section class="panel joysticks-fixed"><div class="head"><h2>Commandes des 4 axes — toujours visibles</h2><button type="button" id="goSettings">Modifier type / longueur</button></div><div id="axisControls"></div><div id="movementAlert" role="status" aria-live="polite">Aucun mouvement refusé.</div><p class="muted" style="margin:4px 0 0">Sur petit écran : faire défiler les 4 commandes horizontalement, sans déplacer la page.</p></section><section class="panel" id="axisSettingsPanel" style="margin-bottom:12px;scroll-margin-top:180px"><div class="head"><h2>Configuration des 4 articulations — paramètres modifiables</h2><button id="settingsHelp" type="button">Comment régler ?</button></div><p class="muted">Pour chaque axe : choisir la rotation <b>horizontale ou verticale</b>, régler la <b>longueur, le rayon physique et la marge anticollision (mm)</b>, les <b>butées min/max</b> et le <b>sens du joystick</b>. Les calculs et les 4 vues se mettent à jour automatiquement.</p><div id="axisSettings" class="axis-settings" style="margin-top:10px"></div></section><section class="panel" id="livePanel"><div class="live-heading"><h2>Comprendre les calculs — en direct</h2><label class="field">Détail de l'articulation<select id="liveAxis"><option value="0">Axe 1</option><option value="1">Axe 2</option><option value="2">Axe 3</option><option value="3">Axe 4</option></select></label></div><div class="clarity-intro"><b>Comment lire ces calculs ?</b><br>1. On lit l’angle et la longueur d’un axe. 2. On calcule combien le segment avance sur X, Y et Z. 3. On additionne ce déplacement à la position précédente. 4. On teste les segments contre chaque zone interdite. <b>Tout se recalcule pendant les mouvements.</b></div><div id="liveSummary" class="gridlive"></div><div id="liveMath" class="explanation"></div><div class="table-wrapper"><table><thead><tr><th>Segment</th><th>Longueur</th><th>ΔX</th><th>ΔY</th><th>ΔZ</th><th>Position finale X/Y/Z</th><th>Zones non autorisées</th></tr></thead><tbody id="liveTable"></tbody></table></div><div id="livePath" class="explanation"></div><div id="blockedDiagnostics" hidden></div><p class="muted">Le contrôle actuel détecte l'intersection des lignes centrales des segments avec les volumes polygonaux extrudés. Il calcule la distance entre la ligne centrale et le volume de chaque zone, puis retire le rayon et la marge propres à chaque segment. La vérification d’une trajectoire reste échantillonnée. Le balayage angulaire est discret et ne garantit pas une trajectoire sans collision.</p></section><div class="views"><div class="panel view"><h2>Vue de dessus — X / Y</h2><canvas id="top"></canvas><p class="muted">Rouge : volumes interdits projetés au sol</p></div><div class="panel view"><h2>Vue de côté — X / Z</h2><canvas id="side"></canvas><p class="muted">Projection du bras et des obstacles selon X / Z</p></div><div class="panel view"><h2>Vue de face — Y / Z</h2><canvas id="front"></canvas><p class="muted">Projection du bras et des obstacles selon Y / Z</p></div><div class="panel view"><h2>Vue 3/4 — caméra orbitale</h2><canvas id="iso"></canvas><p class="muted">Glisser : orbite · Maj + glisser : panoramique · Molette : zoom · double-clic : réinitialiser</p></div></div><section class="panel" style="margin-top:12px"><h2>Coordonnées calculées sur chaque articulation</h2><div class="scroll"><table class="coords"><thead><tr><th>Point</th><th>X (mm)</th><th>Y (mm)</th><th>Z (mm)</th><th>Azimut</th><th>Élévation</th></tr></thead><tbody id="positionRows"></tbody></table></div><p class="muted">Les points J0–J4 sont affichés directement sur les quatre vues. J0 correspond à la base ; J4 correspond à l'extrémité TCP.</p></section><section class="panel" style="margin-top:12px"><details><summary style="cursor:pointer;font-weight:700">Afficher les calculs des 4 articulations (détail complet)</summary><div id="equations" style="margin-top:10px"></div></details></section></section><aside class="sidebar"><section class="panel"><h2>État de la simulation</h2><div id="status" class="status"></div><div class="grid3" style="margin-top:10px"><label class="field">Base X (mm)<input id="baseX" type="number" value="0"></label><label class="field">Base Y (mm)<input id="baseY" type="number" value="0"></label><label class="field">Base Z (mm)<input id="baseZ" type="number" value="0"></label></div><label style="display:block;margin:9px 0"><input id="block" type="checkbox" checked> Bloquer le déplacement en collision</label><label><input id="showLabels" type="checkbox" checked> Afficher les coordonnées sur les articulations</label><div class="grid2" style="margin-top:10px"><label class="field">Pas max. de balayage (°)<input id="sweepStep" type="number" min="0.05" max="5" step="0.05" value="0.25"></label><label class="field">Pas max. déplacement segment (mm)<input id="sweepMM" type="number" min="0.1" max="10" step="0.1" value="1"></label></div><p class="muted">Le balayage suit les mouvements commandés, vérifie tous les segments contre toutes les zones actives et s'arrête près du premier contact. Un mouvement échantillonné ne constitue pas une garantie de sécurité machine.</p></section><section class="panel"><h2>Zones interdites par points X/Y ou X/Z ou Y/Z</h2><div class="buttons"><button id="toolMove" class="active">Déplacer les zones</button><button id="toolVertex">Modifier les sommets</button><button id="toolPan">Déplacer la vue</button></div><p class="edit-notice">Dessus, côté et face : glisser un volume pour le déplacer. En mode sommets, déplacer les points sur la vue correspondant au plan du polygone. En vue 3/4 : glisser pour tourner la caméra.</p><p class="muted">Créer une zone en ajoutant chaque sommet du polygone par ses coordonnées. Définir ensuite l'intervalle d'extrusion sur le troisième axe.</p><div class="buttons"><button class="primary" id="newZone">+ Nouvelle zone</button></div><div id="zoneEditor"></div></section><section class="panel" id="collisionMathPanel"><h2>Calculs de collision — détail en temps réel</h2>
+
+.vertex-facebar{display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:10px;background:#0a2937;border:1px solid #356577;border-radius:8px;margin:8px 0}
+.vertex-facebar select{width:auto;min-width:140px;max-width:100%}
+.vertex-facebar .muted{flex:1;min-width:200px}
+#vertexEditStatus{min-height:25px}
+.point .add-after{background:#175a66;border-color:#43999d;font-size:11px}
+</style></head><body><header><div><h1>Robot 4 axes — Cinématique et zones par coordonnées</h1><div class="muted">Quatre vues synchronisées · trajectoires angulaires contrôlées · anticollision sur toutes les zones</div></div><div class="buttons"><button id="reset">Angles à zéro</button><button id="export">Exporter configuration JSON</button><button id="import">Importer JSON</button><input id="file" type="file" accept=".json" hidden></div></header><main class="layout"><section><section class="panel joysticks-fixed"><div class="head"><h2>Commandes des 4 axes — toujours visibles</h2><button type="button" id="goSettings">Modifier type / longueur</button></div><div id="axisControls"></div><div id="movementAlert" role="status" aria-live="polite">Aucun mouvement refusé.</div><p class="muted" style="margin:4px 0 0">Sur petit écran : faire défiler les 4 commandes horizontalement, sans déplacer la page.</p></section><section class="panel" id="axisSettingsPanel" style="margin-bottom:12px;scroll-margin-top:180px"><div class="head"><h2>Configuration des 4 articulations — paramètres modifiables</h2><button id="settingsHelp" type="button">Comment régler ?</button></div><p class="muted">Pour chaque axe : choisir la rotation <b>horizontale ou verticale</b>, régler la <b>longueur, le rayon physique et la marge anticollision (mm)</b>, les <b>butées min/max</b> et le <b>sens du joystick</b>. Les calculs et les 4 vues se mettent à jour automatiquement.</p><div id="axisSettings" class="axis-settings" style="margin-top:10px"></div></section><section class="panel" id="livePanel"><div class="live-heading"><h2>Comprendre les calculs — en direct</h2><label class="field">Détail de l'articulation<select id="liveAxis"><option value="0">Axe 1</option><option value="1">Axe 2</option><option value="2">Axe 3</option><option value="3">Axe 4</option></select></label></div><div class="clarity-intro"><b>Comment lire ces calculs ?</b><br>1. On lit l’angle et la longueur d’un axe. 2. On calcule combien le segment avance sur X, Y et Z. 3. On additionne ce déplacement à la position précédente. 4. On teste les segments contre chaque zone interdite. <b>Tout se recalcule pendant les mouvements.</b></div><div id="liveSummary" class="gridlive"></div><div id="liveMath" class="explanation"></div><div class="table-wrapper"><table><thead><tr><th>Segment</th><th>Longueur</th><th>ΔX</th><th>ΔY</th><th>ΔZ</th><th>Position finale X/Y/Z</th><th>Zones non autorisées</th></tr></thead><tbody id="liveTable"></tbody></table></div><div id="livePath" class="explanation"></div><div id="blockedDiagnostics" hidden></div><p class="muted">Le contrôle actuel détecte l'intersection des lignes centrales des segments avec les volumes polygonaux extrudés. Il calcule la distance entre la ligne centrale et le volume de chaque zone, puis retire le rayon et la marge propres à chaque segment. La vérification d’une trajectoire reste échantillonnée. Le balayage angulaire est discret et ne garantit pas une trajectoire sans collision.</p></section><div class="views"><div class="panel view"><h2>Vue de dessus — X / Y</h2><canvas id="top"></canvas><p class="muted">Rouge : volumes interdits projetés au sol</p></div><div class="panel view"><h2>Vue de côté — X / Z</h2><canvas id="side"></canvas><p class="muted">Projection du bras et des obstacles selon X / Z</p></div><div class="panel view"><h2>Vue de face — Y / Z</h2><canvas id="front"></canvas><p class="muted">Projection du bras et des obstacles selon Y / Z</p></div><div class="panel view"><h2>Vue 3/4 — caméra orbitale</h2><canvas id="iso"></canvas><p class="muted">Glisser : orbite · Maj + glisser : panoramique · Molette : zoom · Tube coloré : rayon physique · Volume orange transparent : marge incluse</p></div></div><section class="panel" style="margin-top:12px"><h2>Coordonnées calculées sur chaque articulation</h2><div class="scroll"><table class="coords"><thead><tr><th>Point</th><th>X (mm)</th><th>Y (mm)</th><th>Z (mm)</th><th>Azimut</th><th>Élévation</th></tr></thead><tbody id="positionRows"></tbody></table></div><p class="muted">Les points J0–J4 sont affichés directement sur les quatre vues. J0 correspond à la base ; J4 correspond à l'extrémité TCP.</p></section><section class="panel" style="margin-top:12px"><details><summary style="cursor:pointer;font-weight:700">Afficher les calculs des 4 articulations (détail complet)</summary><div id="equations" style="margin-top:10px"></div></details></section></section><aside class="sidebar"><section class="panel"><h2>État de la simulation</h2><div id="status" class="status"></div><div class="grid3" style="margin-top:10px"><label class="field">Base X (mm)<input id="baseX" type="number" value="0"></label><label class="field">Base Y (mm)<input id="baseY" type="number" value="0"></label><label class="field">Base Z (mm)<input id="baseZ" type="number" value="0"></label></div><label style="display:block;margin:9px 0"><input id="block" type="checkbox" checked> Bloquer le déplacement en collision</label><label><input id="showLabels" type="checkbox" checked> Afficher les coordonnées sur les articulations</label><div class="grid2" style="margin-top:10px"><label class="field">Pas max. de balayage (°)<input id="sweepStep" type="number" min="0.05" max="5" step="0.05" value="0.25"></label><label class="field">Pas max. déplacement segment (mm)<input id="sweepMM" type="number" min="0.1" max="10" step="0.1" value="1"></label></div><p class="muted">Le balayage suit les mouvements commandés, vérifie tous les segments contre toutes les zones actives et s'arrête près du premier contact. Un mouvement échantillonné ne constitue pas une garantie de sécurité machine.</p></section><section class="panel"><h2>Zones interdites par points X/Y ou X/Z ou Y/Z</h2><div class="buttons"><button id="toolMove" class="active">Déplacer les zones</button><button id="toolVertex">Déplacer les sommets</button><button id="toolAddVertex">+ Sommet par clic</button><button id="toolPan">Déplacer la vue</button></div><div class="vertex-help" id="vertexHelp">Mode Déplacer les sommets : les poignées P1, P2… apparaissent sur les deux faces du volume dans les quatre vues. Glisser une poignée pour modifier sa position. En vue 3/4 : clic-glisser une poignée pour modifier le contour dans son plan ; Alt + glisser pour ajuster sa profondeur. Mode + Sommet : cliquer sur une arête du contour (également en 3/4) pour insérer un nouveau point entre ses deux voisins. Cliquer hors d’une poignée en 3/4 permet de tourner la caméra. Maj + glisser = déplacer la vue.</div><div class="vertex-facebar"><label class="field">Face à modifier<select id="faceSelect"><option value="auto">Automatique (plus proche)</option><option value="0">Face A — extrusion minimum</option><option value="1">Face B — extrusion maximum</option></select></label><span class="muted">Les sommets P1, P2… sont partagés entre les deux faces : modifier un point met à jour les quatre vues. Choisis A ou B lorsque les faces se superposent.</span></div><div id="vertexEditStatus" class="muted" aria-live="polite">Sélectionne une zone puis choisis un outil.</div><p class="muted">Ajouter les sommets soit par coordonnées ci-dessous, soit par un clic sur une arête depuis les quatre vues. Chaque point P possède une copie sur chacune des deux faces A et B. Un sommet ajouté sur une face est créé sur l’autre et apparaît dans les quatre vues. Les deux contours restent identiques (volume extrudé).</p><div class="buttons"><button class="primary" id="newZone">+ Nouvelle zone</button></div><div id="zoneEditor"></div></section><section class="panel" id="calculationExportPanel">
+<h2>Tableur des calculs — sans animation</h2>
+<p class="muted">Cette section rassemble les valeurs numériques actuelles : paramètres des 4 axes, positions 3D calculées et contrôles de dégagement contre chaque zone active. Le tableur est indépendant des animations et reflète l'état au moment de l'export.</p>
+<div class="buttons"><button type="button" id="calcExportCSV" class="primary">Télécharger les calculs (.csv)</button><button type="button" id="calcRefresh">Actualiser le tableau</button></div>
+<div id="calcExportInfo" class="muted" role="status"></div>
+<div id="calcExportPreview" class="table-wrapper"></div>
+<p class="muted">Formule des positions : ΔX = L × cos(élévation) × cos(azimut) ; ΔY = L × cos(élévation) × sin(azimut) ; ΔZ = L × sin(élévation). Anticollision : dégagement = distance segment-volume − rayon − marge. Si le dégagement est nul ou négatif, le contrôle est interdit. Ce rapport décrit les positions actuelles et non les trajectoires continues.</p>
+</section><section class="panel" id="collisionMathPanel"><h2>Calculs de collision — détail en temps réel</h2>
 <p class="muted">Pour chaque paire segment / zone active : projection du segment, test de la profondeur du volume, test de l'intérieur du polygone et coordonnées du contact. Chaque segment possède un rayon physique et une marge.</p>
 <div id="collisionMathSummary" class="explanation"></div>
 <div id="collisionMathExample" class="formula-example"></div>
@@ -99,7 +112,7 @@
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id),rad=d=>d*Math.PI/180,deg=r=>r*180/Math.PI,fix=n=>Number(n).toFixed(2),clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-const color=['#48d5cc','#f3c06b','#ae9cff','#f18b98'];let axes=[{angle:0,min:-45,max:45,length:110,radius:12,margin:8,type:'H',rev:false},{angle:0,min:-45,max:45,length:95,radius:12,margin:8,type:'V',rev:false},{angle:0,min:-45,max:45,length:85,radius:10,margin:8,type:'V',rev:false},{angle:0,min:-45,max:45,length:65,radius:8,margin:8,type:'H',rev:false}],zones=[],selected=-1,orbit={azimuth:0.78,elevation:0.62},zoom=1.12,scanToken=0,blockReason='',editTool='move',matrix=null,matrixPage=0,scanBusy=false;
+const color=['#48d5cc','#f3c06b','#ae9cff','#f18b98'];let axes=[{angle:0,min:-45,max:45,length:110,radius:12,margin:8,type:'H',rev:false},{angle:0,min:-45,max:45,length:95,radius:12,margin:8,type:'V',rev:false},{angle:0,min:-45,max:45,length:85,radius:10,margin:8,type:'V',rev:false},{angle:0,min:-45,max:45,length:65,radius:8,margin:8,type:'H',rev:false}],zones=[],selected=-1,orbit={azimuth:0.78,elevation:0.62},zoom=1.12,scanToken=0,blockReason='',editTool='move',hoverHandle=null,activeVertex=-1,matrix=null,matrixPage=0,scanBusy=false;
 const views={top:{canvas:$('top'),pan:{x:0,y:0}},side:{canvas:$('side'),pan:{x:0,y:0}},front:{canvas:$('front'),pan:{x:0,y:0}},iso:{canvas:$('iso'),pan:{x:0,y:0}}};
 const vec=(x,y,z)=>({x,y,z}),add=(p,q)=>vec(p.x+q.x,p.y+q.y,p.z+q.z);
 function fk(config=axes){let p=vec(+$('baseX').value||0,+$('baseY').value||0,+$('baseZ').value||0),az=0,el=0;const out=[{...p,az,el}];for(const a of config){if(a.type==='H')az+=rad(a.angle);else el+=rad(a.angle);const dx=a.length*Math.cos(el)*Math.cos(az),dy=a.length*Math.cos(el)*Math.sin(az),dz=a.length*Math.sin(el);p=add(p,vec(dx,dy,dz));out.push({...p,az,el,dx,dy,dz})}return out}
@@ -236,18 +249,106 @@ function tryAngles(i,degree){
 }
 function axesUI(){const root=$('axisControls');root.innerHTML='';$('axisSettings').innerHTML='';axes.forEach((a,i)=>{const el=document.createElement('div');el.className='axis';el.innerHTML=`<div class="head"><b style="color:${color[i]}">Axe ${i+1}</b><strong id="value${i}">0°</strong></div><div class="axis-params"><h3>Paramètres de l’axe ${i+1}</h3><div class="grid2"><label class="field">Rotation<select id="type${i}"><option value="H">Horizontale</option><option value="V">Verticale</option></select></label><label style="font-size:12px"><input id="rev${i}" type="checkbox"> Inverser joystick</label></div><div class="joyline"><div class="joy" id="joy${i}"><div class="knob" id="knob${i}"></div></div><div><button id="minus${i}">−</button> <button id="plus${i}">+</button><div class="muted">Joystick : maintenir et décaler<br>vers la gauche / droite</div></div></div><input id="slide${i}" type="range" min="${a.min}" max="${a.max}" step="0.1"><div class="grid2"><label class="field">Angle (°)<input type="number" step="0.1" id="ang${i}"></label><label class="field">Longueur (mm)<input type="number" min="1" id="length${i}" value="${a.length}"></label><label class="field">Rayon physique (mm)<input type="number" min="0" step="0.5" id="radius${i}" value="${a.radius}"></label><label class="field">Marge anticollision (mm)<input type="number" min="0" step="0.5" id="margin${i}" value="${a.margin}"></label><label class="field">Minimum (°)<input type="number" id="min${i}" value="${a.min}"></label><label class="field">Maximum (°)<input type="number" id="max${i}" value="${a.max}"></label></div></div>`;root.append(el);const detail=el.querySelector('.axis-params');const joyLine=el.querySelector('.joyline');el.append(joyLine);const slider=el.querySelector('#slide'+i);el.append(slider);$('axisSettings').append(detail);$('type'+i).value=a.type;$('rev'+i).checked=a.rev;$('type'+i).onchange=e=>{const old=axes[i].type;axes[i].type=e.target.value;if($('block').checked&&collisions().length){axes[i].type=old;e.target.value=old;blockReason='Changement de type refusé : le bras entrerait dans une zone.'}update()};$('rev'+i).onchange=e=>axes[i].rev=e.target.checked;$('slide'+i).oninput=e=>tryAngles(i,+e.target.value);$('ang'+i).onchange=e=>tryAngles(i,+e.target.value);$('length'+i).onchange=e=>{const old=axes[i].length;axes[i].length=Math.max(1,+e.target.value||1);if($('block').checked&&collisions().length){axes[i].length=old;blockReason='Longueur refusée : collision avec une zone.'}e.target.value=axes[i].length;update()};for(const key of ['radius','margin'])$(key+i).onchange=e=>{const before=axes[i][key],value=Number(e.target.value);if(!Number.isFinite(value)||value<0){e.target.value=before;return}axes[i][key]=value;blockReason='';scanToken++;matrix=null;matrixPage=0;$('matrixOutput').textContent='Paramètres physiques modifiés : relancer le calcul de matrice.';$('scanStatus').textContent='Matrice à recalculer avec les nouveaux rayons et marges.';update()};for(const key of ['min','max'])$(key+i).onchange=e=>{axes[i][key]=+e.target.value;if(axes[i].min>axes[i].max)axes[i][key]=key==='min'?axes[i].max:axes[i].min;const previous=axes[i].angle;axes[i].angle=clamp(axes[i].angle,axes[i].min,axes[i].max);if($('block').checked&&collisions().length){axes[i].angle=previous;blockReason='Modification de butée refusée : collision.'}update()};for(const [key,d] of [['minus',-1],['plus',1]])$(key+i).onclick=()=>tryAngles(i,axes[i].angle+d*(axes[i].rev?-1:1));const joy=$('joy'+i),knob=$('knob'+i);let active=false,speed=0,last=0;function change(e){const r=joy.getBoundingClientRect(),offset=clamp((e.clientX-r.left-r.width/2)/(r.width/2),-1,1);speed=offset*50*(axes[i].rev?-1:1);knob.style.transform=`translateX(${offset*19}px)`}function tick(t){if(!active)return;if(last)tryAngles(i,axes[i].angle+speed*Math.min((t-last)/1000,0.06));last=t;requestAnimationFrame(tick)}joy.onpointerdown=e=>{active=true;last=0;joy.setPointerCapture(e.pointerId);change(e);requestAnimationFrame(tick)};joy.onpointermove=e=>{if(active)change(e)};joy.onpointerup=joy.onpointercancel=()=>{active=false;speed=0;last=0;knob.style.transform=''}});syncAxes()}
 function syncAxes(){axes.forEach((a,i)=>{if(!$('ang'+i))return; if($('radius'+i)&&document.activeElement!==$('radius'+i))$('radius'+i).value=a.radius; if($('margin'+i)&&document.activeElement!==$('margin'+i))$('margin'+i).value=a.margin;$('value'+i).textContent=fix(a.angle)+'°';$('ang'+i).value=fix(a.angle);$('slide'+i).min=a.min;$('slide'+i).max=a.max;$('slide'+i).value=a.angle;$('length'+i).value=a.length;$('min'+i).value=a.min;$('max'+i).value=a.max})}
-function newZone(){zones.push({name:'Zone '+(zones.length+1),plane:'XY',range:[-50,150],poly:[{x:80,y:40},{x:150,y:40},{x:150,y:110},{x:80,y:110}],enabled:true});selected=zones.length-1;zoneUI();update()}
-function zoneUI(){const root=$('zoneEditor');root.innerHTML='';if(!zones.length){root.innerHTML='<p class="muted">Aucune zone. Clique sur Nouvelle zone pour créer un polygone.</p>';return}const select=document.createElement('select');select.id='zoneSelect';zones.forEach((z,i)=>select.insertAdjacentHTML('beforeend',`<option value="${i}">${z.name.replaceAll('<','&lt;')}</option>`));select.value=clamp(selected,0,zones.length-1);root.append(select);select.onchange=e=>{selected=+e.target.value;zoneUI();update()};const z=zones[selected],panel=document.createElement('div');panel.innerHTML=`<div class="grid2" style="margin:10px 0"><label class="field">Nom<input id="zoneName" type="text"></label><label class="field">Plan de définition<select id="zonePlane"><option value="XY">Dessus X/Y</option><option value="XZ">Côté X/Z</option><option value="YZ">Face Y/Z</option></select></label></div><label><input type="checkbox" id="zoneEnabled"> Zone active</label><div class="grid2" style="margin:10px 0"><label class="field" id="rangeLabel1">Extrusion min<input type="number" id="range0"></label><label class="field" id="rangeLabel2">Extrusion max<input type="number" id="range1"></label></div><h3>Points du polygone — ordre du contour</h3><div id="vertexList"></div><div class="buttons"><button id="addVertex">+ Ajouter un point</button><button id="closeGuide">Fermer le contour</button><button id="deleteZone">Supprimer la zone</button></div><div id="vertexInfo" class="status"></div><div id="zoneMath" class="explanation"></div>`;root.append(panel);$('zoneName').value=z.name;$('zonePlane').value=z.plane;$('zoneEnabled').checked=z.enabled;for(let i=0;i<2;i++)$('range'+i).value=z.range[i];function labelNames(){const name=z.plane==='XY'?'Z':z.plane==='XZ'?'Y':'X';$('rangeLabel1').firstChild.textContent=name+' min (mm)';$('rangeLabel2').firstChild.textContent=name+' max (mm)'}labelNames();$('zoneName').onchange=e=>{z.name=e.target.value;zoneUI()};$('zonePlane').onchange=e=>{z.plane=e.target.value;labelNames();verticesUI();update()};$('zoneEnabled').onchange=e=>{z.enabled=e.target.checked;update()};for(let i=0;i<2;i++)$('range'+i).onchange=e=>{z.range[i]=+e.target.value;update()};$('addVertex').onclick=()=>{const prev=z.poly.at(-1)||{x:0,y:0};z.poly.push({x:prev.x+25,y:prev.y+25});verticesUI();update()};$('closeGuide').onclick=()=>{window.alert('Le contour se ferme automatiquement entre le dernier point et le premier. Les points doivent être ordonnés autour de la zone, sans auto-intersection.');update()};$('deleteZone').onclick=()=>{zones.splice(selected,1);selected=Math.max(0,Math.min(selected,zones.length-1));zoneUI();update()};verticesUI()}
-function verticesUI(){const z=zones[selected];if(!z)return;const root=$('vertexList');root.innerHTML='';const names=z.plane==='XY'?['X','Y']:z.plane==='XZ'?['X','Z']:['Y','Z'];z.poly.forEach((p,i)=>{const div=document.createElement('div');div.className='point';div.innerHTML=`<div class="head"><b>P${i+1}</b><button data-delete>Retirer</button></div><div class="grid2"><label class="field">${names[0]} (mm)<input data-coordinate="x" type="number" step="0.1"></label><label class="field">${names[1]} (mm)<input data-coordinate="y" type="number" step="0.1"></label></div>`;div.querySelector('[data-coordinate=x]').value=p.x;div.querySelector('[data-coordinate=y]').value=p.y;div.querySelectorAll('[data-coordinate]').forEach(input=>input.onchange=()=>{p[input.dataset.coordinate]=+input.value;update()});div.querySelector('[data-delete]').onclick=()=>{z.poly.splice(i,1);verticesUI();update()};root.append(div)});const msg=$('vertexInfo');msg.textContent=z.poly.length<3?'Il faut au minimum trois points.':`Le contour sera fermé entre P${z.poly.length} et P1. ${z.poly.length} sommets définis. Extrusion sur ${z.plane==='XY'?'Z':z.plane==='XZ'?'Y':'X'}.`}
+function newZone(){zones.push({name:'Zone '+(zones.length+1),plane:'XY',range:[-50,150],poly:[{x:80,y:40},{x:150,y:40},{x:150,y:110},{x:80,y:110}],enabled:true});selected=zones.length-1;activeVertex=-1;zoneUI();update()}
+function zoneUI(){const root=$('zoneEditor');root.innerHTML='';if(!zones.length){root.innerHTML='<p class="muted">Aucune zone. Clique sur Nouvelle zone pour créer un polygone.</p>';return}const select=document.createElement('select');select.id='zoneSelect';zones.forEach((z,i)=>select.insertAdjacentHTML('beforeend',`<option value="${i}">${z.name.replaceAll('<','&lt;')}</option>`));select.value=clamp(selected,0,zones.length-1);root.append(select);select.onchange=e=>{selected=+e.target.value;activeVertex=-1;zoneUI();update()};const z=zones[selected],panel=document.createElement('div');panel.innerHTML=`<div class="grid2" style="margin:10px 0"><label class="field">Nom<input id="zoneName" type="text"></label><label class="field">Plan de définition<select id="zonePlane"><option value="XY">Dessus X/Y</option><option value="XZ">Côté X/Z</option><option value="YZ">Face Y/Z</option></select></label></div><label><input type="checkbox" id="zoneEnabled"> Zone active</label><div class="grid2" style="margin:10px 0"><label class="field" id="rangeLabel1">Extrusion min<input type="number" id="range0"></label><label class="field" id="rangeLabel2">Extrusion max<input type="number" id="range1"></label></div><h3>Points du polygone — ordre du contour</h3><div id="vertexList"></div><div class="buttons"><button id="addVertex">+ Ajouter un point</button><button id="closeGuide">Fermer le contour</button><button id="deleteZone">Supprimer la zone</button></div><div id="vertexInfo" class="status"></div><div id="zoneMath" class="explanation"></div>`;root.append(panel);$('zoneName').value=z.name;$('zonePlane').value=z.plane;$('zoneEnabled').checked=z.enabled;for(let i=0;i<2;i++)$('range'+i).value=z.range[i];function labelNames(){const name=z.plane==='XY'?'Z':z.plane==='XZ'?'Y':'X';$('rangeLabel1').firstChild.textContent=name+' min (mm)';$('rangeLabel2').firstChild.textContent=name+' max (mm)'}labelNames();$('zoneName').onchange=e=>{z.name=e.target.value;zoneUI()};$('zonePlane').onchange=e=>{z.plane=e.target.value;labelNames();verticesUI();update()};$('zoneEnabled').onchange=e=>{z.enabled=e.target.checked;update()};for(let i=0;i<2;i++)$('range'+i).onchange=e=>{z.range[i]=+e.target.value;update()};$('addVertex').onclick=()=>{if(z.poly.length<2)return;const i=z.poly.length-1,a=z.poly[i],b=z.poly[0],pt={x:(a.x+b.x)/2,y:(a.y+b.y)/2};z.poly.splice(i+1,0,pt);activeVertex=i+1;verticesUI();refreshVertexMessage(`Sommet P${i+2} créé sur l'arête P${i+1}–P1. Visible sur les deux faces.`);invalidateZoneEdit();update()};$('closeGuide').onclick=()=>{window.alert('Le contour se ferme automatiquement entre le dernier point et le premier. Les points doivent être ordonnés autour de la zone, sans auto-intersection.');update()};$('deleteZone').onclick=()=>{zones.splice(selected,1);selected=Math.max(0,Math.min(selected,zones.length-1));zoneUI();update()};verticesUI()}
+function verticesUI(){const z=zones[selected];if(!z)return;const root=$('vertexList');root.innerHTML='';const names=z.plane==='XY'?['X','Y']:z.plane==='XZ'?['X','Z']:['Y','Z'];z.poly.forEach((p,i)=>{const div=document.createElement('div');div.className='point'+(i===activeVertex?' selected-vertex':'');div.innerHTML=`<div class="head"><b>P${i+1}</b><div class="buttons" style="margin:0"><button class="add-after" data-insert>+ Après P${i+1}</button><button data-delete>Retirer</button></div></div><div class="grid2"><label class="field">${names[0]} (mm)<input data-coordinate="x" type="number" step="0.1"></label><label class="field">${names[1]} (mm)<input data-coordinate="y" type="number" step="0.1"></label></div>`;div.querySelector('[data-coordinate=x]').value=p.x;div.querySelector('[data-coordinate=y]').value=p.y;div.querySelectorAll('[data-coordinate]').forEach(input=>input.onchange=()=>{const prior=p[input.dataset.coordinate],next=Number(input.value);p[input.dataset.coordinate]=next;if(!Number.isFinite(next)||!isSimplePolygon(z.poly)){p[input.dataset.coordinate]=prior;input.value=prior;refreshVertexMessage('Position refusée : contour invalide.')}else{invalidateZoneEdit();update()}});div.querySelector('[data-insert]').onclick=()=>{const a=z.poly[i],b=z.poly[(i+1)%z.poly.length],pt={x:(a.x+b.x)/2,y:(a.y+b.y)/2};z.poly.splice(i+1,0,pt);activeVertex=i+1;verticesUI();invalidateZoneEdit();update()};div.querySelector('[data-delete]').onclick=()=>{if(z.poly.length<=3){refreshVertexMessage('Au moins trois sommets sont nécessaires.');return}z.poly.splice(i,1);activeVertex=-1;verticesUI();invalidateZoneEdit();update()};root.append(div)});const msg=$('vertexInfo');msg.textContent=z.poly.length<3?'Il faut au minimum trois points.':`Le contour sera fermé entre P${z.poly.length} et P1. ${z.poly.length} sommets définis. Extrusion sur ${z.plane==='XY'?'Z':z.plane==='XZ'?'Y':'X'}.`}
 function zoneExplanation(){const z=zones[selected];if(!z||!$('zoneMath'))return;const poly=z.poly;if(poly.length<3){$('zoneMath').textContent='Volume indéfini : au moins trois points nécessaires.';return}let sum=0,perimeter=0;for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length];sum+=a.x*b.y-b.x*a.y;perimeter+=Math.hypot(b.x-a.x,b.y-a.y)}const area=Math.abs(sum)/2,depth=Math.abs(z.range[1]-z.range[0]);$('zoneMath').innerHTML=`<b>Calcul du volume — ${z.name.replaceAll('<','&lt;')}</b><br>Contour défini par ${poly.length} sommets dans le plan ${z.plane}.<br>Surface du polygone (formule du lacet) : A = ½ × |Σ(uᵢ·vᵢ₊₁ − uᵢ₊₁·vᵢ)| = ${fix(area)} mm².<br>Périmètre du contour = ${fix(perimeter)} mm.<br>Extrusion : e = |${fix(z.range[1])} − ${fix(z.range[0])}| = ${fix(depth)} mm.<br>Volume géométrique V = A × e = <b>${fix(area*depth)} mm³</b>.<br>La collision exige l'appartenance au polygone et à l'intervalle d'extrusion.`}
 function corners(z){const lower=z.poly.map(p=>z.plane==='XY'?vec(p.x,p.y,z.range[0]):z.plane==='XZ'?vec(p.x,z.range[0],p.y):vec(z.range[0],p.x,p.y));const upper=z.poly.map(p=>z.plane==='XY'?vec(p.x,p.y,z.range[1]):z.plane==='XZ'?vec(p.x,z.range[1],p.y):vec(z.range[1],p.x,p.y));return[lower,upper]}
 function depth(p){return(p.x*Math.sin(orbit.azimuth)+p.y*Math.cos(orbit.azimuth))*Math.cos(orbit.elevation)+p.z*Math.sin(orbit.elevation)}
+// En perspective 3/4, les rayons sont représentés par des capsules 3D.
+// La géométrie utilise de véritables anneaux perpendiculaires à l'axe du segment.
+function drawCapsule3D(ctx,view,pa,pb,radMM,fillColor,alpha,outline){
+ const radius=Math.max(0,radMM);
+ if(radius<0.05)return;
+ const sub=(a,b)=>vec(a.x-b.x,a.y-b.y,a.z-b.z);
+ const dot=(a,b)=>a.x*b.x+a.y*b.y+a.z*b.z;
+ const cross3=(a,b)=>vec(a.y*b.z-a.z*b.y,a.z*b.x-a.x*b.z,a.x*b.y-a.y*b.x);
+ const norm=a=>{const n=Math.hypot(a.x,a.y,a.z);return n<1e-10?vec(0,0,0):vec(a.x/n,a.y/n,a.z/n)};
+ const u=norm(sub(pb,pa));
+ const length=Math.hypot(pb.x-pa.x,pb.y-pa.y,pb.z-pa.z);
+ if(length<1e-8){return}
+ let helper=Math.abs(u.z)<0.9?vec(0,0,1):vec(0,1,0);
+ const v=norm(cross3(u,helper)),w=cross3(u,v);
+ const light=norm(vec(-0.35,0.5,0.8));
+ const facets=[];
+ const STEPS=24;
+ for(let k=0;k<STEPS;k++){
+  const t0=2*Math.PI*k/STEPS,t1=2*Math.PI*(k+1)/STEPS;
+  const n0=vec(v.x*Math.cos(t0)+w.x*Math.sin(t0),v.y*Math.cos(t0)+w.y*Math.sin(t0),v.z*Math.cos(t0)+w.z*Math.sin(t0));
+  const n1=vec(v.x*Math.cos(t1)+w.x*Math.sin(t1),v.y*Math.cos(t1)+w.y*Math.sin(t1),v.z*Math.cos(t1)+w.z*Math.sin(t1));
+  const point=(p,n)=>vec(p.x+n.x*radius,p.y+n.y*radius,p.z+n.z*radius);
+  const q=[point(pa,n0),point(pb,n0),point(pb,n1),point(pa,n1)];
+  const shade=Math.max(0.25,0.42+0.58*dot(norm(vec(n0.x+n1.x,n0.y+n1.y,n0.z+n1.z)),light));
+  facets.push({q,shade,z:q.reduce((a,p)=>a+depth(p),0)/4});
+ }
+ facets.sort((a,b)=>a.z-b.z);
+ ctx.save();
+ const rgb=fillColor;
+ for(const f of facets){
+  const ps=f.q.map(q=>screen(view,project(q,view)));
+  ctx.beginPath();ps.forEach((p,i)=>{if(i)ctx.lineTo(p.x,p.y);else ctx.moveTo(p.x,p.y)});ctx.closePath();
+  // Le canal alpha est appliqué à toute la capsule, sans effacer le tube physique.
+  ctx.fillStyle=`rgba(${rgb[0]*f.shade|0},${rgb[1]*f.shade|0},${rgb[2]*f.shade|0},${alpha})`;
+  ctx.fill();
+ }
+ // Embouts arrondis : sections projetées sphériques, avec relief lumineux.
+ for(const p of [pa,pb]){
+  const ps=screen(view,project(p,view));
+  const unit=screen(view,project(vec(p.x+1,p.y,p.z),view));
+  const unit2=screen(view,project(vec(p.x,p.y,p.z+1),view));
+  const pix=Math.max(Math.hypot(unit.x-ps.x,unit.y-ps.y),Math.hypot(unit2.x-ps.x,unit2.y-ps.y));
+  const r=radius*pix;
+  if(r<0.6)continue;
+  const grad=ctx.createRadialGradient(ps.x-r*0.38,ps.y-r*0.4,r*0.02,ps.x,ps.y,r);
+  grad.addColorStop(0,`rgba(${Math.min(255,rgb[0]+45)},${Math.min(255,rgb[1]+45)},${Math.min(255,rgb[2]+45)},${alpha})`);
+  grad.addColorStop(1,`rgba(${rgb[0]*0.36|0},${rgb[1]*0.36|0},${rgb[2]*0.36|0},${alpha})`);
+  ctx.beginPath();ctx.arc(ps.x,ps.y,r,0,Math.PI*2);ctx.fillStyle=grad;ctx.fill();
+  if(outline){ctx.strokeStyle=`rgba(249,192,111,${Math.min(0.85,alpha+0.2)})`;ctx.lineWidth=1.1;ctx.stroke()}
+ }
+ ctx.restore();
+}
 function drawView(name){const v=views[name],c=v.canvas,r=c.getBoundingClientRect(),d=devicePixelRatio||1,w=r.width,h=r.height;if(!w||!h)return;if(c.width!==Math.round(w*d)||c.height!==Math.round(h*d)){c.width=Math.round(w*d);c.height=Math.round(h*d)}const g=c.getContext('2d');g.setTransform(d,0,0,d,0,0);g.fillStyle='#0b192b';g.fillRect(0,0,w,h);function line(p,q,col,width=1){p=screen(name,p);q=screen(name,q);g.beginPath();g.moveTo(p.x,p.y);g.lineTo(q.x,q.y);g.strokeStyle=col;g.lineWidth=width;g.stroke()}const grid=range=>{for(let x=-range;x<=range;x+=50){line({x,y:-range},{x,y:range},'#20344a');line({x:-range,y:x},{x:range,y:x},'#20344a')}};if(name!=='iso'){grid(800);line({x:-800,y:0},{x:800,y:0},'#4d708a');line({x:0,y:-800},{x:0,y:800},'#4d708a')}else{for(let a=-400;a<=400;a+=50){line(project(vec(-400,a,0),'iso'),project(vec(400,a,0),'iso'),'#1e3349');line(project(vec(a,-400,0),'iso'),project(vec(a,400,0),'iso'),'#1e3349')}for(const [p,col] of [[vec(130,0,0),'#fb9090'],[vec(0,130,0),'#85cdfa'],[vec(0,0,130),'#bdf0ac']])line(project(vec(0,0,0),'iso'),project(p,'iso'),col,2)}
 function path(points){g.beginPath();points.forEach((p,i)=>i?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y));g.closePath()}
 if(name==='iso'){const faces=[];for(let zi=0;zi<zones.length;zi++){const z=zones[zi];if(!z.enabled||z.poly.length<3)continue;const [low,high]=corners(z);faces.push({pts:low,idx:zi},{pts:high,idx:zi});for(let i=0;i<low.length;i++)faces.push({pts:[low[i],low[(i+1)%low.length],high[(i+1)%low.length],high[i]],idx:zi})}faces.sort((a,b)=>a.pts.reduce((n,p)=>n+depth(p),0)/a.pts.length-b.pts.reduce((n,p)=>n+depth(p),0)/b.pts.length);for(const f of faces){const arr=f.pts.map(p=>screen(name,project(p,name)));path(arr);g.fillStyle=f.idx===selected?'#ff8e6466':'#fa687046';g.fill();g.strokeStyle=f.idx===selected?'#ffe7b4':'#ff8897';g.lineWidth=1.1;g.stroke()}}
 else{for(let zi=0;zi<zones.length;zi++){const z=zones[zi];if(!z.enabled||z.poly.length<3)continue;const [low,high]=corners(z);const all=low.concat(high).map(p=>project(p,name));const hull=convexHull(all);if(hull.length<3)continue;path(hull.map(p=>screen(name,p)));g.fillStyle=zi===selected?'#ff996344':'#ff66703a';g.fill();g.strokeStyle=zi===selected?'#ffdda3':'#fb8d9a';g.lineWidth=2;g.stroke()}}
-if(name!=='iso'&&editTool==='vertex'&&zones[selected]?.plane===viewPlane(name)){const z=zones[selected];z.poly.forEach((p,i)=>{const q=screen(name,p);g.beginPath();g.arc(q.x,q.y,6,0,2*Math.PI);g.fillStyle='#ffe29f';g.fill();g.strokeStyle='#1a2639';g.stroke();g.fillStyle='#fff';g.fillText('P'+(i+1),q.x+8,q.y-7)})}
-const pp=fk();for(let i=0;i<4;i++){const width=2*((axes[i].radius||0)+(axes[i].margin||0))*zoom*Math.min(w,h)/570;line(project(pp[i],name),project(pp[i+1],name),'#e5aa6266',Math.max(6,width));line(project(pp[i],name),project(pp[i+1],name),color[i],Math.max(5,2*(axes[i].radius||0)*zoom*Math.min(w,h)/570))}for(let i=0;i<pp.length;i++){const p=screen(name,project(pp[i],name));g.beginPath();g.arc(p.x,p.y,i===0?8:7,0,Math.PI*2);g.fillStyle=i===0?'#f0f7ff':color[Math.max(0,i-1)];g.fill();g.strokeStyle='#07182a';g.lineWidth=1.5;g.stroke();g.font='bold 12px system-ui';g.fillStyle='#f0f7ff';g.fillText('J'+i,p.x+9,p.y-8);if($('showLabels').checked){g.font='10px system-ui';g.fillStyle='#bbd2e8';g.fillText(`${fix(pp[i].x)},${fix(pp[i].y)},${fix(pp[i].z)}`,p.x+10,p.y+6)}}g.font='12px system-ui';g.fillStyle='#8faac2';g.fillText(name==='top'?'X → | Y ↑':name==='side'?'X → | Z ↑':name==='front'?'Y → | Z ↑':'Vue 3/4 : X/Y/Z',9,18)}
+if((editTool==='vertex'||editTool==='insert')&&zones[selected]?.enabled&&zones[selected].poly.length>=3){
+ const z=zones[selected],cs=corners(z),faceA=cs[0],faceB=cs[1];
+ // Montrer les deux faces du volume dans chaque projection (y compris la vue orbitale).
+ for(const [side,face] of [[0,faceA],[1,faceB]]){
+  const q=face.map(p=>handleScreen(name,p,side,z));
+  for(let i=0;i<q.length;i++){
+   const from=q[i],to=q[(i+1)%q.length];
+   g.strokeStyle='#f9dc9e';g.lineWidth=2;g.setLineDash([5,4]);g.beginPath();g.moveTo(from.x,from.y);g.lineTo(to.x,to.y);g.stroke();g.setLineDash([]);
+   if(editTool==='insert'){
+    const middle={x:(from.x+to.x)/2,y:(from.y+to.y)/2};g.fillStyle='#75edc9';g.fillRect(middle.x-4,middle.y-4,8,8);
+   }
+  }
+  if(editTool==='vertex')for(let i=0;i<q.length;i++){
+   const v=q[i],on=hoverHandle?.kind==='vertex'&&hoverHandle.zone===selected&&hoverHandle.vertex===i&&hoverHandle.face===side;
+   g.beginPath();g.arc(v.x,v.y,on?11:8,0,2*Math.PI);g.fillStyle=on?'#64ffe0':side===0?'#fff0b5':'#ffa6ae';g.fill();g.strokeStyle='#203247';g.lineWidth=2;g.stroke();g.font='bold 11px system-ui';g.fillStyle='#f9fbff';g.fillText('P'+(i+1)+(side?'B':'A'),v.x+11,v.y+(side?15:-9))
+  }
+ }
+}
+const pp=fk();for(let i=0;i<4;i++){
+ if(name==='iso'){
+  const rad=Math.max(0,axes[i].radius||0),extra=Math.max(0,axes[i].margin||0);
+  const rgb=[[78,209,200],[229,181,95],[246,129,139],[175,158,249]][i];
+  if(rad+extra>0){
+   // Enveloppe de marge : capsule transparente tridimensionnelle.
+   drawCapsule3D(g,name,pp[i],pp[i+1],rad+extra,[234,160,78],0.18,true);
+  }
+  if(rad>0){
+   // Bras physique : capsule opaque en volume.
+   drawCapsule3D(g,name,pp[i],pp[i+1],rad,rgb,0.95,false);
+  }else{
+   line(project(pp[i],name),project(pp[i+1],name),color[i],5);
+  }
+ }else{
+  const width=2*((axes[i].radius||0)+(axes[i].margin||0))*zoom*Math.min(w,h)/570;
+  line(project(pp[i],name),project(pp[i+1],name),'#e5aa6266',Math.max(6,width));
+  line(project(pp[i],name),project(pp[i+1],name),color[i],Math.max(5,2*(axes[i].radius||0)*zoom*Math.min(w,h)/570));
+ }
+}for(let i=0;i<pp.length;i++){const p=screen(name,project(pp[i],name));g.beginPath();g.arc(p.x,p.y,i===0?8:7,0,Math.PI*2);g.fillStyle=i===0?'#f0f7ff':color[Math.max(0,i-1)];g.fill();g.strokeStyle='#07182a';g.lineWidth=1.5;g.stroke();g.font='bold 12px system-ui';g.fillStyle='#f0f7ff';g.fillText('J'+i,p.x+9,p.y-8);if($('showLabels').checked){g.font='10px system-ui';g.fillStyle='#bbd2e8';g.fillText(`${fix(pp[i].x)},${fix(pp[i].y)},${fix(pp[i].z)}`,p.x+10,p.y+6)}}g.font='12px system-ui';g.fillStyle='#8faac2';g.fillText(name==='top'?'X → | Y ↑':name==='side'?'X → | Z ↑':name==='front'?'Y → | Z ↑':'Vue 3/4 : X/Y/Z',9,18)}
 function convexHull(pts){const a=[...pts].sort((u,v)=>u.x-v.x||u.y-v.y);if(a.length<3)return a;const low=[],high=[];for(const p of a){while(low.length>=2&&cross(low.at(-2),low.at(-1),p)<=0)low.pop();low.push(p)}for(let i=a.length-1;i>=0;i--){const p=a[i];while(high.length>=2&&cross(high.at(-2),high.at(-1),p)<=0)high.pop();high.push(p)}low.pop();high.pop();return low.concat(high)}
 function explain(){const pts=fk();$('positionRows').innerHTML=pts.map((p,i)=>`<tr><td>J${i}${i===4?' (TCP)':''}</td><td>${fix(p.x)}</td><td>${fix(p.y)}</td><td>${fix(p.z)}</td><td>${fix(deg(p.az))}°</td><td>${fix(deg(p.el))}°</td></tr>`).join('');let html=`<div class="explanation"><b>J0 — base</b><br>J0 = (X₀, Y₀, Z₀) = (${fix(pts[0].x)}, ${fix(pts[0].y)}, ${fix(pts[0].z)}) mm.</div>`;for(let i=1;i<5;i++){const a=axes[i-1],p=pts[i],q=pts[i-1],az=deg(p.az),el=deg(p.el);html+=`<div class="explanation"><b style="color:${color[i-1]}">J${i} — Axe ${i} (${a.type==='H'?'horizontal':'vertical'})</b><br>Longueur L${i} = ${fix(a.length)} mm ; angle θ${i} = ${fix(a.angle)}°. ${a.type==='H'?'Ajout de θ à l’azimut global.':'Ajout de θ à l’élévation globale.'}<br>Azimut cumulé ψ = ${fix(az)}° ; élévation cumulée φ = ${fix(el)}°.<br>ΔX = L·cos(φ)·cos(ψ) = ${fix(p.dx)} mm<br>ΔY = L·cos(φ)·sin(ψ) = ${fix(p.dy)} mm<br>ΔZ = L·sin(φ) = ${fix(p.dz)} mm<br>J${i} = J${i-1} + (ΔX, ΔY, ΔZ)<br>= (${fix(q.x)}, ${fix(q.y)}, ${fix(q.z)}) + (${fix(p.dx)}, ${fix(p.dy)}, ${fix(p.dz)})<br><b>= (${fix(p.x)}, ${fix(p.y)}, ${fix(p.z)}) mm</b></div>`}$('equations').innerHTML=html}
 function liveMathUI(){
@@ -307,20 +408,215 @@ function collisionMathUI(){
  <span class="muted">La décision globale est INTERDIT dès qu'un seul contrôle sur les 4 segments et toutes les zones actives est interdit. Les distances sont exprimées en millimètres.</span>`;
 }
 function collisionUI(){const hits=collisions();let html=`<b>${hits.length?'Zone(s) de sécurité non respectée(s)':'Dégagements respectés'}</b><br>`;if(blockReason)html+=`<span class="warn">${blockReason}</span><br>`;for(const h of hits){const z=zones[h.zone];html+=`<div class="explanation"><b>Segment J${h.segment} → J${h.segment+1} / ${z.name.replaceAll('<','&lt;')}</b><br>D (ligne → volume) = ${Number.isFinite(h.distance)?fix(h.distance):'indéterminée'} mm · R = ${fix(h.radius)} mm · M = ${fix(h.margin)} mm.<br>D − R − M = <b>${Number.isFinite(h.clearance)?fix(h.clearance)+' mm':'erreur géométrique'}</b> : mouvement interdit.</div>`}$('collisionDetail').innerHTML=html;$('sweepDetail').textContent=lastSweep;const tip=fk().at(-1);$('status').innerHTML=`${lastBlockedAttempt?'<span class="warn"><b>MOUVEMENT DEMANDÉ REFUSÉ</b> (voir alerte sous les joysticks)</span><br>':''}<span class="${hits.length?'warn':'ok'}">${hits.length?'Position actuelle non autorisée':'Position actuelle autorisée (même si un mouvement a été refusé)'}</span><br>TCP : X=${fix(tip.x)} · Y=${fix(tip.y)} · Z=${fix(tip.z)} mm<br>${zones.filter(z=>z.enabled).length} volume(s) actif(s).`}
+
+// Export figé des calculs dans un CSV à sections, lisible par Excel ou LibreOffice.
+// Aucune capture de canvas : uniquement les données numériques du moteur.
+function snapshotCalculations(){
+ const pts=fk(), tests=collisionTests();
+ const positions=pts.map((p,i)=>({
+  point:'J'+i,axe:i||'',type:i?axes[i-1].type:'Base',angle:i?axes[i-1].angle:'',
+  longueur:i?axes[i-1].length:'',azimut:deg(p.az),elevation:deg(p.el),
+  dx:i?p.dx:0,dy:i?p.dy:0,dz:i?p.dz:0,
+  x:p.x,y:p.y,z:p.z
+ }));
+ const checks=tests.map(t=>({
+  segment:'J'+t.segment+'-J'+(t.segment+1),
+  zone:zones[t.zone].name,
+  distance:t.distance,rayon:t.radius,marge:t.margin,
+  degagement:t.clearance,autorise:t.blocked?'NON':'OUI',
+  xContact:t.hit?.p?.x,yContact:t.hit?.p?.y,zContact:t.hit?.p?.z
+ }));
+ return {positions,checks};
+}
+function escapeCsvField(v){
+ if(v===undefined||v===null)return '';
+ if(typeof v==='number')return Number.isFinite(v)?String(Number(v.toFixed(6))).replace('.',','):'indetermine';
+ let str=String(v);
+ if(/^[=+\-@\t\r]/.test(str))str="'"+str; // protège l'ouverture dans un tableur
+ return /[;"\r\n]/.test(str)?'"'+str.replaceAll('"','""')+'"':str;
+}
+function csvLine(row){return row.map(escapeCsvField).join(';')+'\r\n'}
+function refreshCalculationExport(){
+ const {positions,checks}=snapshotCalculations();
+ const blocked=checks.filter(c=>c.autorise==='NON').length;
+ $('calcExportInfo').textContent=`${positions.length} points (J0–J4) · ${checks.length} vérification(s) segment/zone · ${blocked} résultat(s) interdit(s) · ${zones.filter(z=>z.enabled).length} zone(s) active(s).`;
+ const fmt=x=>Number.isFinite(x)?x.toFixed(2):'—';
+ $('calcExportPreview').innerHTML='<table><thead><tr><th>Segment</th><th>Zone</th><th>Distance D</th><th>Rayon R</th><th>Marge M</th><th>D−R−M</th><th>Autorisé</th></tr></thead><tbody>'+
+ (checks.length?checks.slice(0,80).map(c=>`<tr><td>${c.segment}</td><td>${String(c.zone).replace(/[&<>]/g,v=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[v]))}</td><td>${fmt(c.distance)}</td><td>${fmt(c.rayon)}</td><td>${fmt(c.marge)}</td><td>${fmt(c.degagement)}</td><td>${c.autorise}</td></tr>`).join(''):'<tr><td colspan="7">Aucune zone active : calculs de position disponibles.</td></tr>')+'</tbody></table>';
+}
+$('calcRefresh').onclick=refreshCalculationExport;
+$('calcExportCSV').onclick=()=>{
+ const {positions,checks}=snapshotCalculations();
+ const rows=[];
+ rows.push(csvLine(['RAPPORT DE CALCULS - BRAS ROBOTIQUE 4 AXES']));
+ rows.push(csvLine(['Modele','Azimut et elevation cumules - cinematique simplifiee']));
+ rows.push(csvLine(['Unites','mm et degres']));
+ rows.push(csvLine(['Position globale','INTERDITE si au moins un degagement est nul ou negatif']));
+ rows.push('\r\n');
+ rows.push(csvLine(['POSITIONS CALCULEES']));
+ rows.push(csvLine(['Point','Axe','Type','Angle deg','Longueur mm','Azimut deg','Elevation deg','Delta X mm','Delta Y mm','Delta Z mm','X mm','Y mm','Z mm']));
+ for(const p of positions)rows.push(csvLine([p.point,p.axe,p.type,p.angle,p.longueur,p.azimut,p.elevation,p.dx,p.dy,p.dz,p.x,p.y,p.z]));
+ rows.push('\r\n');
+ rows.push(csvLine(['TESTS ANTICOLLISION - TOUTES LES ZONES ACTIVES']));
+ rows.push(csvLine(['Segment','Zone','Distance D mm','Rayon R mm','Marge M mm','Degagement D-R-M mm','Autorise','Point le plus proche X','Point le plus proche Y','Point le plus proche Z']));
+ for(const c of checks)rows.push(csvLine([c.segment,c.zone,c.distance,c.rayon,c.marge,c.degagement,c.autorise,c.xContact,c.yContact,c.zContact]));
+ rows.push('\r\n');
+ rows.push(csvLine(['EXPLICATION DES FORMULES']));
+ rows.push(csvLine(['Delta X','Longueur × cos(elevation) × cos(azimut)']));
+ rows.push(csvLine(['Delta Y','Longueur × cos(elevation) × sin(azimut)']));
+ rows.push(csvLine(['Delta Z','Longueur × sin(elevation)']));
+ rows.push(csvLine(['Position XYZ','Position du point precedent + deplacement Delta XYZ']));
+ rows.push(csvLine(['D','Distance minimale entre la ligne centrale du segment et le volume interdit']));
+ rows.push(csvLine(['R','Rayon physique du segment']));
+ rows.push(csvLine(['M','Marge anticollision du segment']));
+ rows.push(csvLine(['Degagement','D - R - M : autorise uniquement si strictement superieur a zero']));
+ rows.push(csvLine(['Important','Calcul de position statique : ne certifie pas une trajectoire sans collision']));
+ const url=URL.createObjectURL(new Blob(['\ufeff',...rows],{type:'text/csv;charset=utf-8'}));
+ const a=document.createElement('a');a.href=url;a.download='calculs_statiques_robot_4_axes.csv';a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),15000);
+};
 function update(){movementAlertUI();if(matrix&&!scanBusy)$('scanStatus').textContent='Après une modification des axes ou zones, relancer l’analyse pour mettre à jour la matrice.';zoneExplanation();syncAxes();for(const name of Object.keys(views))drawView(name);explain();collisionUI();collisionMathUI();liveMathUI()}
-const modes={move:'toolMove',vertex:'toolVertex',pan:'toolPan'};
-for(const [mode,id] of Object.entries(modes))$(id).onclick=()=>{editTool=mode;for(const [key,button] of Object.entries(modes))$(button).classList.toggle('active',key===mode)};
+const modes={move:'toolMove',vertex:'toolVertex',insert:'toolAddVertex',pan:'toolPan'};
+for(const [mode,id] of Object.entries(modes))$(id).onclick=()=>{editTool=mode;hoverHandle=null;for(const [key,button] of Object.entries(modes))$(button).classList.toggle('active',key===mode);for(const name of Object.keys(views))drawView(name)};
 function canvasWorld(name,px,py){const v=views[name],r=v.canvas.getBoundingClientRect(),scale=zoom*Math.min(r.width,r.height)/570;return{x:(px-r.width/2-v.pan.x)/scale,y:(r.height/2+v.pan.y-py)/scale}}
 function viewPlane(name){return name==='top'?'XY':name==='side'?'XZ':'YZ'}
 function findZone(name,p){for(let i=zones.length-1;i>=0;i--){const z=zones[i];if(!z.enabled||z.poly.length<3)continue;const [a,b]=corners(z),hull=convexHull(a.concat(b).map(q=>project(q,name)));if(hull.length>=3&&(insidePoly(p,hull)||hull.some((q,j)=>pointOnEdge(p,q,hull[(j+1)%hull.length]))))return i}return -1}
-function findVertex(name,z,px,py){if(z.plane!==viewPlane(name))return -1;for(let i=z.poly.length-1;i>=0;i--){const screenPt=screen(name,z.poly[i]);if(Math.hypot(screenPt.x-px,screenPt.y-py)<14)return i}return -1}
+function planeAxis(z){return z.plane==='XY'?['x','y','z']:z.plane==='XZ'?['x','z','y']:['y','z','x']}
+function handleScreen(name,pt,face,z){const projected=screen(name,project(pt,name));const axis=z.plane==='XY'?'z':z.plane==='XZ'?'y':'x';const hidden=(name==='top'&&axis==='z')||(name==='side'&&axis==='y')||(name==='front'&&axis==='x');if(hidden){projected.y+=face===0?-9:9}return projected}
+function zoneHandle(name,px,py,kind){
+ const limit=kind==='vertex'?24:22, candidates=[],facePreference=$('faceSelect')?.value||'auto';
+ // Préférer la zone déjà choisie, mais les autres zones restent sélectionnables.
+ for(const zi of [selected,...zones.map((_,i)=>i).filter(i=>i!==selected)]){
+  const z=zones[zi];if(!z||!z.enabled||z.poly.length<3)continue;
+  const cs=corners(z);
+  for(let face=0;face<2;face++){
+   if(facePreference!=='auto'&&face!==Number(facePreference))continue;
+   const projected=cs[face].map(v=>handleScreen(name,v,face,z));
+   for(let i=0;i<projected.length;i++){
+    const a=projected[i],b=projected[(i+1)%projected.length];
+    if(kind==='vertex'){
+     const distance=Math.hypot(a.x-px,a.y-py);
+     if(distance<=limit)candidates.push({zone:zi,face,vertex:i,kind,distance});
+    }else{
+     const vx=b.x-a.x,vy=b.y-a.y,len=vx*vx+vy*vy;
+     if(len<16)continue;
+     const t=clamp(((px-a.x)*vx+(py-a.y)*vy)/len,0,1);
+     if(t<0.06||t>0.94)continue;
+     const distance=Math.hypot(px-(a.x+t*vx),py-(a.y+t*vy));
+     if(distance<=limit)candidates.push({zone:zi,face,edge:i,t,kind,distance});
+    }
+   }
+  }
+ }
+ candidates.sort((a,b)=>a.distance-b.distance||(a.zone===selected?-1:1));return candidates[0]||null
+}
+function isSimplePolygon(poly){
+ if(poly.length<3)return false;let area=0;
+ for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length];area+=a.x*b.y-b.x*a.y;if(Math.hypot(a.x-b.x,a.y-b.y)<0.001)return false}
+ if(Math.abs(area)<0.001)return false;
+ const intersect=(a,b,c,d)=>{const o1=cross(a,b,c),o2=cross(a,b,d),o3=cross(c,d,a),o4=cross(c,d,b);return o1*o2<0&&o3*o4<0};
+ for(let i=0;i<poly.length;i++)for(let j=i+1;j<poly.length;j++){
+  if(j===i+1||(i===0&&j===poly.length-1))continue;
+  if(intersect(poly[i],poly[(i+1)%poly.length],poly[j],poly[(j+1)%poly.length]))return false
+ }return true
+}
+function dragFacePoint(name,original,face,vertex,mouse){
+ const z=zones[selected],axesGlobal=planeAxis(z),current=corners(original)[face][vertex],ref=screen(name,project(current,name));
+ if(name!=='iso'){
+  const drawn=handleScreen(name,current,face,z),actual=screen(name,project(current,name)),uv=canvasWorld(name,mouse.x-(drawn.x-actual.x),mouse.y-(drawn.y-actual.y)),global=name==='top'?['x','y']:name==='side'?['x','z']:['y','z'];
+  const next={...current};next[global[0]]=uv.x;next[global[1]]=uv.y;
+  return next
+ }
+ // En projection orbitale, reconstruire le déplacement dans le plan du polygone.
+ const [u,v,w]=axesGlobal,base=project(current,'iso');
+ const pu=project({...current,[u]:current[u]+1},'iso'),pv=project({...current,[v]:current[v]+1},'iso');
+ const du={x:pu.x-base.x,y:pu.y-base.y},dv={x:pv.x-base.x,y:pv.y-base.y};
+ const target=canvasWorld('iso',mouse.x,mouse.y),dx=target.x-base.x,dy=target.y-base.y,det=du.x*dv.y-du.y*dv.x;
+ let next={...current};
+ if(Math.abs(det)>0.025){next[u]+= (dx*dv.y-dy*dv.x)/det;next[v]+=(du.x*dy-du.y*dx)/det}
+ return next
+}
+function applyHandlePoint(name,drag,mouse,depthOnly){
+ const z=drag.zone,o=drag.original,face=drag.face,idx=drag.vertex,[u,v,w]=planeAxis(z);
+ let target=dragFacePoint(name,{...o,plane:z.plane},face,idx,mouse);
+ if(name==='iso'&&depthOnly){
+  // Alt : un déplacement vertical équivaut à une translation le long de la direction d'extrusion.
+  const start=corners(o)[face][idx],basis=project({...start,[w]:start[w]+1},'iso'),point=project(start,'iso'),dy=basis.y-point.y,dx=basis.x-point.x;
+  const startMouse=canvasWorld('iso',drag.startPx,drag.startPy),now=canvasWorld('iso',mouse.x,mouse.y);
+  const denom=dx*dx+dy*dy;const change=denom>1e-5?((now.x-startMouse.x)*dx+(now.y-startMouse.y)*dy)/denom:0;
+  target={...start,[w]:start[w]+change}
+ }
+ const candidate=o.poly.map(p=>({...p}));candidate[idx]={x:target[u],y:target[v]};
+ // Ne jamais fabriquer un polygone auto-intersectant pendant le glisser.
+ if(!isSimplePolygon(candidate)){return false}
+ z.poly=candidate;z.range=[...o.range];
+ const newDepth=target[w];if((depthOnly||name!=='iso')&&Number.isFinite(newDepth)){
+  if(face===0)z.range[0]=Math.min(newDepth,o.range[1]-0.1);
+  else z.range[1]=Math.max(newDepth,o.range[0]+0.1)
+ }
+ return true
+}
+function refreshVertexMessage(txt){const el=$('vertexEditStatus');if(el)el.textContent=txt}
 function moveZone(z,original,name,delta){const change={x:0,y:0,z:0};if(name==='top'){change.x=delta.x;change.y=delta.y}else if(name==='side'){change.x=delta.x;change.z=delta.y}else if(name==='front'){change.y=delta.x;change.z=delta.y}
  const local=z.plane==='XY'?{x:change.x,y:change.y}:z.plane==='XZ'?{x:change.x,y:change.z}:{x:change.y,y:change.z};
  z.poly=original.poly.map(p=>({x:p.x+local.x,y:p.y+local.y}));const extrusion=z.plane==='XY'?change.z:z.plane==='XZ'?change.y:change.x;z.range=[original.range[0]+extrusion,original.range[1]+extrusion]}
-function refreshZoneDrag(){scanToken++;matrix=null;scanBusy=false;zoneUI();update()}
-for(const [name,v] of Object.entries(views)){const c=v.canvas;let drag=null;c.onpointerdown=e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,p=canvasWorld(name,x,y);drag={mode:'pan',x,y,start:p,shift:e.shiftKey,changed:false};if(name!=='iso'&&!e.shiftKey&&editTool!=='pan'){const index=findZone(name,p);if(index>=0){selected=index;const z=zones[index];drag.zone=z;drag.original={poly:z.poly.map(q=>({...q})),range:[...z.range]};drag.mode='zone';if(editTool==='vertex'){const vertex=findVertex(name,z,x,y);if(vertex>=0){drag.mode='vertex';drag.vertex=vertex}else drag=null}if(drag)zoneUI()}}if(name==='iso'&&!e.shiftKey)drag.mode='orbit';if(drag)c.setPointerCapture(e.pointerId)};
-c.onpointermove=e=>{if(!drag)return;const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,dx=x-drag.x,dy=y-drag.y,p=canvasWorld(name,x,y);if(drag.mode==='zone'){moveZone(drag.zone,drag.original,name,{x:p.x-drag.start.x,y:p.y-drag.start.y});drag.changed=true;for(const key of Object.keys(views))drawView(key)}else if(drag.mode==='vertex'){drag.zone.poly[drag.vertex]={x:p.x,y:p.y};drag.changed=true;for(const key of Object.keys(views))drawView(key)}else if(drag.mode==='orbit'){orbit.azimuth+=dx*0.008;orbit.elevation=clamp(orbit.elevation+dy*0.008,-1.5,1.5);for(const key of Object.keys(views))drawView(key)}else{v.pan.x+=dx;v.pan.y+=dy;for(const key of Object.keys(views))drawView(key)}drag.x=x;drag.y=y};
-c.onpointerup=c.onpointercancel=()=>{if(drag?.changed)refreshZoneDrag();drag=null};c.onwheel=e=>{e.preventDefault();zoom=clamp(zoom*(e.deltaY<0?1.10:0.90),0.25,5);for(const key of Object.keys(views))drawView(key)};if(name==='iso')c.ondblclick=()=>{orbit={azimuth:0.78,elevation:0.62};v.pan={x:0,y:0};update()}}
+function invalidateZoneEdit(){scanToken++;matrix=null;scanBusy=false;$('scanStatus').textContent='Zone modifiée : recalculer la matrice d’interdiction.'}
+function refreshZoneDrag(){invalidateZoneEdit();zoneUI();update()}
+for(const [name,v] of Object.entries(views)){
+ const c=v.canvas;let drag=null;
+ c.onpointerdown=e=>{
+  const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,p=canvasWorld(name,x,y);
+  drag={mode:'pan',x,y,start:p,startPx:x,startPy:y,changed:false};
+  if(!e.shiftKey&&editTool==='insert'){
+   const hit=zoneHandle(name,x,y,'edge');
+   if(hit){selected=hit.zone;const z=zones[selected],a=z.poly[hit.edge],b=z.poly[(hit.edge+1)%z.poly.length];
+    const pt={x:a.x+(b.x-a.x)*hit.t,y:a.y+(b.y-a.y)*hit.t};
+    z.poly.splice(hit.edge+1,0,pt);activeVertex=hit.edge+1;
+    refreshVertexMessage(`${z.name} : P${hit.edge+2} ajouté sur les faces A et B ; projections actualisées dans les quatre vues.`);
+    zoneUI();refreshZoneDrag();drag=null;return
+   }
+  }
+  if(!e.shiftKey&&editTool==='vertex'){
+   const hit=zoneHandle(name,x,y,'vertex');
+   if(hit){selected=hit.zone;activeVertex=hit.vertex;const z=zones[selected];
+    drag={mode:'vertex',zone:z,original:{plane:z.plane,poly:z.poly.map(q=>({...q})),range:[...z.range]},vertex:hit.vertex,face:hit.face,name,start:p,startPx:x,startPy:y,x,y,changed:false};
+    refreshVertexMessage(`${z.name} — sommet P${hit.vertex+1}, face ${hit.face===0?'min':'max'} : glisser pour modifier.`);
+    zoneUI();c.setPointerCapture(e.pointerId);for(const n of Object.keys(views))drawView(n);return
+   }
+  }
+  if(name!=='iso'&&!e.shiftKey&&editTool==='move'){
+   const index=findZone(name,p);if(index>=0){selected=index;const z=zones[index];drag.zone=z;drag.original={poly:z.poly.map(q=>({...q})),range:[...z.range]};drag.mode='zone';zoneUI()}
+  }
+  if(name==='iso'&&!e.shiftKey)drag.mode='orbit';
+  c.setPointerCapture(e.pointerId)
+ };
+ c.onpointermove=e=>{
+  const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,p=canvasWorld(name,x,y);
+  if(!drag){
+   if(editTool==='vertex'||editTool==='insert'){
+    const hit=zoneHandle(name,x,y,editTool==='vertex'?'vertex':'edge');
+    const prev=JSON.stringify(hoverHandle);hoverHandle=hit;
+    c.style.cursor=hit?(editTool==='insert'?'copy':'grab'):(name==='iso'?'grab':'crosshair');
+    if(JSON.stringify(hit)!==prev)drawView(name)
+   }return
+  }
+  const dx=x-drag.x,dy=y-drag.y;
+  if(drag.mode==='zone'){
+   moveZone(drag.zone,drag.original,name,{x:p.x-drag.start.x,y:p.y-drag.start.y});drag.changed=true;
+  }else if(drag.mode==='vertex'){
+   if(applyHandlePoint(name,drag,{x,y},e.altKey))drag.changed=true;
+  }else if(drag.mode==='orbit'){
+   orbit.azimuth+=dx*0.008;orbit.elevation=clamp(orbit.elevation+dy*0.008,-1.5,1.5)
+  }else {v.pan.x+=dx;v.pan.y+=dy}
+  drag.x=x;drag.y=y;
+  for(const key of Object.keys(views))drawView(key)
+ };
+ function stopDrag(){if(drag?.changed)refreshZoneDrag();drag=null}
+ c.onpointerup=stopDrag;c.onpointercancel=stopDrag;
+ c.onpointerleave=()=>{if(!drag){hoverHandle=null;drawView(name)}};
+ c.onwheel=e=>{e.preventDefault();zoom=clamp(zoom*(e.deltaY<0?1.10:0.90),0.25,5);for(const key of Object.keys(views))drawView(key)};
+ if(name==='iso')c.ondblclick=()=>{orbit={azimuth:0.78,elevation:0.62};v.pan={x:0,y:0};update()}
+}
 $('newZone').onclick=newZone;$('recheck').onclick=update;$('reset').onclick=()=>{for(let i=0;i<axes.length;i++)tryAngles(i,clamp(0,axes[i].min,axes[i].max));update()};let safeBase=[0,0,0];for(const k of ['baseX','baseY','baseZ'])$(k).onchange=()=>{if($('block').checked&&collisions().length){['baseX','baseY','baseZ'].forEach((id,j)=>$(id).value=safeBase[j]);blockReason='Déplacement de la base refusé : collision avec une zone.'}else{safeBase=['baseX','baseY','baseZ'].map(id=>+$(id).value)}update()};for(const k of ['block','showLabels','sweepStep','sweepMM'])$(k).onchange=update;
 $('export').onclick=()=>{const data={version:21,axes,zones,base:[+$('baseX').value,+$('baseY').value,+$('baseZ').value]};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='simulateur_robot_4_axes_zones_points.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)};
 $('import').onclick=()=>$('file').click();$('file').onchange=async e=>{try{const data=JSON.parse(await e.target.files[0].text());if(!Array.isArray(data.axes)||data.axes.length!==4||!data.axes.every(a=>Number.isFinite(a.angle)&&Number.isFinite(a.length)&&a.length>0&&Number.isFinite(a.min)&&Number.isFinite(a.max)&&a.min<=a.max&&a.min<=a.angle&&a.angle<=a.max))throw Error('Axes invalides');if(!Array.isArray(data.zones)||!data.zones.every(z=>['XY','XZ','YZ'].includes(z.plane)&&Array.isArray(z.range)&&z.range.length===2&&z.range.every(Number.isFinite)&&Array.isArray(z.poly)&&z.poly.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y))))throw Error('Zones invalides');axes=data.axes.map(a=>({...a,type:a.type==='V'?'V':'H',radius:Number.isFinite(a.radius)&&a.radius>=0?a.radius:0,margin:Number.isFinite(a.margin)&&a.margin>=0?a.margin:0}));zones=data.zones.map(z=>({...z,enabled:z.enabled!==false}));if(Array.isArray(data.base)&&data.base.length===3&&data.base.every(Number.isFinite)){['baseX','baseY','baseZ'].forEach((k,i)=>$(k).value=data.base[i])}selected=zones.length?0:-1;safeBase=['baseX','baseY','baseZ'].map(id=>+$(id).value);axesUI();zoneUI();addAxisToggles();update()}catch(err){alert('Import refusé : '+err.message)}e.target.value=''};
@@ -369,6 +665,6 @@ function addAxisToggles(){
   button.onclick=()=>{const folded=card.classList.toggle('axis-collapsed');button.textContent=folded?'+ Ouvrir':'− Réduire'};
  });
 }
-addPanelToggles();addAxisToggles();new ResizeObserver(update).observe($('top'));new ResizeObserver(update).observe($('side'));new ResizeObserver(update).observe($('front'));new ResizeObserver(update).observe($('iso'));update();
+addPanelToggles();addAxisToggles();new ResizeObserver(update).observe($('top'));new ResizeObserver(update).observe($('side'));new ResizeObserver(update).observe($('front'));new ResizeObserver(update).observe($('iso'));update();refreshCalculationExport();
 })();
 </script></body></html>
