@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulateur 4 axes V27 — Export calculs tableur</title><style>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Robot 4 axes V37 — Légende corrigée</title><style>
 :root{font:14px system-ui,Arial,sans-serif;color:#e5edf6;background:#081320}*{box-sizing:border-box}body{margin:0}header{padding:16px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid #2d425a}h1{font-size:19px;margin:0}p{margin:7px 0}h2{font-size:15px;margin:0 0 10px}h3{font-size:13px;margin:10px 0}.muted{color:#9fb4c9;font-size:12px}.layout{display:grid;grid-template-columns:minmax(450px,1fr) 380px;gap:12px;padding:12px;max-width:1800px;margin:0 auto}.views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(320px,1fr));gap:12px;min-height:740px}.panel{border:1px solid #2a425a;background:#122135;border-radius:12px;padding:12px}.view{display:flex;flex-direction:column;min-width:0}.view canvas{flex:1;width:100%;min-height:270px;display:block;background:#0b192b;border-radius:7px;touch-action:none}.sidebar{display:flex;flex-direction:column;gap:10px;overflow:visible}.joysticks-fixed{margin-bottom:12px}.joysticks-fixed #axisControls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.joysticks-fixed .axis{margin:0;padding:9px}.joysticks-fixed .joyline{gap:7px}.joysticks-fixed .joy{width:62px;height:62px}.joysticks-fixed .knob{left:18px;top:18px;width:25px;height:25px}.joysticks-fixed .axis .grid2{gap:5px}.joysticks-fixed .axis .grid2 input{padding:5px}.joysticks-fixed .axis .muted{font-size:10px}.joysticks-fixed .axis h3{margin:3px}.joysticks-fixed details{margin-top:8px}.joysticks-fixed summary{cursor:pointer;font-size:12px;color:#a8d5ed}.joysticks-fixed .joyline button{padding:4px 7px}#livePanel{margin:0 0 12px;border-color:#3c7686}#livePanel .gridlive{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#livePanel .live-stat{padding:10px;border:1px solid #34506b;border-radius:8px;background:#0a192b}#livePanel .mathline{font-family:ui-monospace,Consolas,monospace;font-size:12px;overflow-wrap:anywhere;line-height:1.8}#livePanel .mathline b{color:#7cddce}#livePanel .live-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}#livePanel select{width:auto;max-width:180px}#livePanel .live-status{font-weight:600}#livePanel .table-wrapper{overflow:auto;max-width:100%}#livePanel table{width:100%;border-collapse:collapse;font-size:12px}#livePanel th,#livePanel td{padding:6px;text-align:left;white-space:nowrap}@media(max-width:650px){#livePanel .gridlive{grid-template-columns:1fr}}.matrix-table{width:100%;border-collapse:collapse;font-size:11px}.matrix-table td,.matrix-table th{text-align:center;padding:5px}.edit-notice{font-size:12px;color:#b3cddd;margin-top:5px}.view canvas.edit-mode{cursor:move}.view canvas.vertex-mode{cursor:crosshair}.view canvas.add-mode{cursor:copy}.vertex-help{font-size:12px;background:#0c2a37;color:#b8e9e3;padding:9px;border-radius:7px;border:1px solid #345f6b;margin:8px 0}.point.selected-vertex{border-color:#ffdc89;background:#273348}.axis{border:1px solid #334b66;border-radius:9px;padding:9px;margin:7px 0}.head,.row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}label.field{font-size:12px;color:#b2c3d6;display:flex;flex-direction:column;gap:3px}input[type=number],input[type=text],select{background:#0a1828;color:#edf6fc;border:1px solid #415976;border-radius:6px;padding:7px;width:100%;min-width:0}input[type=range]{width:100%;accent-color:#38c5bb}button{background:#263c55;border:1px solid #47647e;border-radius:7px;color:#edf6fc;padding:7px 10px;cursor:pointer}button:hover{background:#31526e}button.active,.primary{background:#117d83;border-color:#37bfbe}.buttons{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.info{color:#a3d6de}.warn{color:#ff9a9d}.ok{color:#6cddb0}.joint{color:#fff}.joy{width:76px;height:76px;flex:none;position:relative;border-radius:50%;background:radial-gradient(circle,#28495f,#0b1b2b);border:1px solid #4c728d;touch-action:none}.knob{position:absolute;left:23px;top:23px;width:28px;height:28px;border-radius:50%;background:#50cec2;border:2px solid #bdf4ea;pointer-events:none}.joyline{display:flex;align-items:center;gap:12px;margin:8px 0}.coords{border-collapse:collapse;width:100%;font-size:12px}th,td{border-bottom:1px solid #2b4056;text-align:right;padding:5px 4px}th:first-child,td:first-child{text-align:left}th{color:#a4c7db;position:sticky;top:0;background:#16283d}.explanation{background:#0b1a2d;border-left:3px solid #41bab2;margin:7px 0;padding:9px;font-size:12px;line-height:1.65;overflow-wrap:anywhere}.point{border:1px solid #334b66;border-radius:7px;padding:7px;margin:5px 0}.status{font-size:12px;line-height:1.6}.divider{border-top:1px solid #31465e;margin:12px 0}.scroll{max-height:320px;overflow:auto}.pill{color:#71dacf;font-size:12px}#matrixOutput{max-height:200px;overflow:auto;font-size:11px}#help{color:#aebed0;font-size:12px;line-height:1.6} @media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{max-height:none}}@media(max-width:1300px){.joysticks-fixed #axisControls{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.joysticks-fixed #axisControls{grid-template-columns:repeat(2,minmax(0,1fr))}.views{grid-template-columns:1fr;grid-template-rows:repeat(4,340px)}.layout{grid-template-columns:minmax(0,1fr)}}
 
 /* Barre de commande permanente : sticky par rapport au défilement de la page. */
@@ -95,11 +95,182 @@
 .vertex-facebar .muted{flex:1;min-width:200px}
 #vertexEditStatus{min-height:25px}
 .point .add-after{background:#175a66;border-color:#43999d;font-size:11px}
-</style></head><body><header><div><h1>Robot 4 axes — V33 · Déplacement par groupe et par face</h1><div class="muted">Quatre vues synchronisées · trajectoires angulaires contrôlées · anticollision sur toutes les zones</div></div><div class="buttons"><button id="reset">Angles à zéro</button><button id="export">Exporter configuration JSON</button><button id="import">Importer JSON</button><input id="file" type="file" accept=".json" hidden></div></header><main class="layout"><section><section class="panel joysticks-fixed"><div class="head"><h2>Commandes des 4 axes — toujours visibles</h2><button type="button" id="goSettings">Modifier type / longueur</button></div><div id="axisControls"></div><div id="movementAlert" role="status" aria-live="polite">Aucun mouvement refusé.</div><p class="muted" style="margin:4px 0 0">Sur petit écran : faire défiler les 4 commandes horizontalement, sans déplacer la page.</p></section><section class="panel" id="axisSettingsPanel" style="margin-bottom:12px;scroll-margin-top:180px"><div class="head"><h2>Configuration des 4 articulations — paramètres modifiables</h2><button id="settingsHelp" type="button">Comment régler ?</button></div><p class="muted">Pour chaque axe : choisir la rotation <b>horizontale ou verticale</b>, régler la <b>longueur, le rayon physique et la marge anticollision (mm)</b>, les <b>butées min/max</b> et le <b>sens du joystick</b>. Les calculs et les 4 vues se mettent à jour automatiquement.</p><div id="axisSettings" class="axis-settings" style="margin-top:10px"></div></section><section class="panel" id="livePanel"><div class="live-heading"><h2>Comprendre les calculs — en direct</h2><label class="field">Détail de l'articulation<select id="liveAxis"><option value="0">Axe 1</option><option value="1">Axe 2</option><option value="2">Axe 3</option><option value="3">Axe 4</option></select></label></div><div class="clarity-intro"><b>Comment lire ces calculs ?</b><br>1. On lit l’angle et la longueur d’un axe. 2. On calcule combien le segment avance sur X, Y et Z. 3. On additionne ce déplacement à la position précédente. 4. On teste les segments contre chaque zone interdite. <b>Tout se recalcule pendant les mouvements.</b></div><div id="liveSummary" class="gridlive"></div><div id="liveMath" class="explanation"></div><div class="table-wrapper"><table><thead><tr><th>Segment</th><th>Longueur</th><th>ΔX</th><th>ΔY</th><th>ΔZ</th><th>Position finale X/Y/Z</th><th>Zones non autorisées</th></tr></thead><tbody id="liveTable"></tbody></table></div><div id="livePath" class="explanation"></div><div id="blockedDiagnostics" hidden></div><p class="muted">Le contrôle actuel détecte l'intersection des lignes centrales des segments avec les volumes polygonaux extrudés. Il calcule la distance entre la ligne centrale et le volume de chaque zone, puis retire le rayon et la marge propres à chaque segment. La vérification d’une trajectoire reste échantillonnée. Le balayage angulaire est discret et ne garantit pas une trajectoire sans collision.</p></section><div class="views"><div class="panel view"><h2>Vue de dessus — X / Y</h2><canvas id="top"></canvas><p class="muted">Rouge : volumes interdits projetés au sol</p></div><div class="panel view"><h2>Vue de côté — X / Z</h2><canvas id="side"></canvas><p class="muted">Projection du bras et des obstacles selon X / Z</p></div><div class="panel view"><h2>Vue de face — Y / Z</h2><canvas id="front"></canvas><p class="muted">Projection du bras et des obstacles selon Y / Z</p></div><div class="panel view"><h2>Vue 3/4 — caméra orbitale</h2><canvas id="iso"></canvas><p class="muted">Glisser : orbite · Maj + glisser : panoramique · Molette : zoom · Tube coloré : rayon physique · Volume orange transparent : marge incluse</p></div></div><section class="panel" style="margin-top:12px"><h2>Coordonnées calculées sur chaque articulation</h2><div class="scroll"><table class="coords"><thead><tr><th>Point</th><th>X (mm)</th><th>Y (mm)</th><th>Z (mm)</th><th>Azimut</th><th>Élévation</th></tr></thead><tbody id="positionRows"></tbody></table></div><p class="muted">Les points J0–J4 sont affichés directement sur les quatre vues. J0 correspond à la base ; J4 correspond à l'extrémité TCP.</p></section><section class="panel" style="margin-top:12px"><details><summary style="cursor:pointer;font-weight:700">Afficher les calculs des 4 articulations (détail complet)</summary><div id="equations" style="margin-top:10px"></div></details></section></section><aside class="sidebar"><section class="panel"><h2>État de la simulation</h2><div id="status" class="status"></div><div class="grid3" style="margin-top:10px"><label class="field">Base X (mm)<input id="baseX" type="number" value="0"></label><label class="field">Base Y (mm)<input id="baseY" type="number" value="0"></label><label class="field">Base Z (mm)<input id="baseZ" type="number" value="0"></label></div><label style="display:block;margin:9px 0"><input id="block" type="checkbox" checked> Bloquer le déplacement en collision</label><label><input id="showLabels" type="checkbox" checked> Afficher les coordonnées sur les articulations</label><div class="grid2" style="margin-top:10px"><label class="field">Pas max. de balayage (°)<input id="sweepStep" type="number" min="0.05" max="5" step="0.05" value="0.25"></label><label class="field">Pas max. déplacement segment (mm)<input id="sweepMM" type="number" min="0.1" max="10" step="0.1" value="1"></label></div><p class="muted">Le balayage suit les mouvements commandés, vérifie tous les segments contre toutes les zones actives et s'arrête près du premier contact. Un mouvement échantillonné ne constitue pas une garantie de sécurité machine.</p></section><section class="panel"><h2>Zones interdites par points X/Y ou X/Z ou Y/Z</h2><div class="buttons"><button id="toolMove" class="active">Déplacer les zones</button><button id="toolVertex">Déplacer les sommets</button><button id="toolGroup">Déplacer un groupe</button><button id="toolFace">Déplacer une face</button><button id="toolAddVertex">+ Sommet par clic</button><button id="toolAddSideVertex">+ Sommet sur côté</button><button id="toolPan">Déplacer la vue</button></div><div class="vertex-help" id="vertexHelp">Mode Déplacer les sommets : les poignées P1, P2… apparaissent sur les deux faces du volume dans les quatre vues. Glisser une poignée pour modifier sa position. En vue 3/4 : clic-glisser une poignée pour modifier le contour dans son plan ; Alt + glisser pour ajuster sa profondeur. Mode + Sommet sur côté : clique où tu veux sur une face latérale visible, surtout dans la vue 3/4. Le sommet C déforme la face latérale dans toutes les projections et pourra être déplacé en mode sommets. Une seule poignée C par face latérale pour le moment. Mode + Sommet : cliquer sur une arête du contour (également en 3/4) pour insérer un nouveau point entre ses deux voisins. Cliquer hors d’une poignée en 3/4 permet de tourner la caméra. Maj + glisser = déplacer la vue.</div><div class="vertex-facebar"><label class="field">Face à modifier<select id="faceSelect"><option value="0">Face basse (A) uniquement</option><option value="1">Face haute (B) uniquement</option><option value="auto">Sélection automatique</option></select></label><span class="muted">Les sommets hauts et bas se déplacent désormais indépendamment. Sélectionne la face à modifier. Les parois latérales relient automatiquement les deux contours.</span></div><div class="vertex-facebar" id="bulkControls" style="display:grid;gap:8px">
+ .point-builder{margin-top:12px;border:1px solid #419ca3;background:#0e2a3a;border-radius:10px;padding:12px}.point-builder[hidden]{display:none}.point-builder .draft-row{display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:1px solid #345165;padding:6px 0}.point-builder .draft-row input{max-width:90px}.point-builder .grid3{margin:8px 0}.point-builder .buttons{margin:10px 0} 
+/* V36 : espaces de travail ; aucun outil métier supprimé. */
+:root{font-size:14px;color:#e9f1fb;background:#08111e}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(155deg,#0a1525 0%,#0b1828 55%,#0c1c2d 100%);min-height:100vh}
+header{padding:15px 22px;background:#0c1b2d;border-color:#23384c;align-items:center}
+header h1{font-size:20px;letter-spacing:-.025em;color:#f2f7ff}
+header>.buttons{margin:0}
+header .buttons button{font-weight:600}
+header #export{background:#096f6f;border-color:#1ea19c}
+header #import{background:#183449;border-color:#47718c}
+header #reset{background:transparent;border-color:#385269}
+.panel{border:1px solid #2b435b;background:#112239;border-radius:13px;padding:14px;box-shadow:0 4px 20px #0002}
+.panel:focus-within{border-color:#386e82}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid #57dacc;outline-offset:2px}
+button{transition:background .13s,border-color .13s}
+button:disabled{opacity:.45;cursor:not-allowed}
+#uiWorkspaceNav{position:sticky;top:0;z-index:160;display:flex;gap:8px;align-items:center;overflow-x:auto;padding:10px 18px;background:#0b1728ed;border-bottom:1px solid #2c475b;box-shadow:0 4px 16px #0003;scrollbar-width:thin}
+#uiWorkspaceNav .nav-kicker{font-size:11px;white-space:nowrap;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#7a9bb2;margin-right:6px}
+#uiWorkspaceNav .ui-workspace-tab{display:inline-flex;align-items:center;gap:9px;border-radius:9px;border:1px solid transparent;padding:11px 14px;background:transparent;color:#afc6da;font-size:13px;font-weight:650;white-space:nowrap}
+#uiWorkspaceNav .ui-workspace-tab:hover{background:#1c3349;color:#fff}
+#uiWorkspaceNav .ui-workspace-tab[aria-selected="true"]{background:#123f4c;color:#a9fff2;border-color:#287f81}
+#uiWorkspaceNav .ui-workspace-tab .ui-tab-number{color:#81a9b3;font-size:10px;font-weight:750;letter-spacing:.03em}
+#uiWorkspaceNav .ui-spacer{flex:1}
+#uiWorkspaceNav .nav-help{font-size:12px;color:#9ab3c9;white-space:nowrap}
+main.layout{max-width:1920px;grid-template-columns:minmax(0,1fr) minmax(395px,480px);gap:18px;padding:18px 20px;align-items:start}
+#uiStage{min-width:0;display:flex;flex-direction:column;gap:11px}
+#uiStageBar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#10243a;border:1px solid #2e4963;padding:11px 13px;border-radius:12px}
+#uiStageBar h2{font-size:15px;letter-spacing:-.01em;margin:0;color:#eaf4ff}
+#uiStageBar .ui-subheading{font-size:11px;color:#99b7ca}
+#uiViewChooser{display:flex;align-items:center;gap:6px}
+#uiViewChooser button{padding:8px 12px;font-size:12px;font-weight:600}
+#uiViewChooser button[aria-pressed="true"]{background:#126c70;border-color:#40b9af;color:white}
+#uiStage .views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(255px,1fr));min-height:630px;height:clamp(630px,calc(100vh - 230px),810px);gap:11px}
+#uiStage .view{min-width:0;padding:10px;overflow:hidden}
+#uiStage .view .panel-collapse-bar{justify-content:space-between;margin:0 0 6px;padding:0 3px;min-height:22px}
+#uiStage .view .panel-collapse-title{color:#d4ecf7;font-weight:650;font-size:12px}
+#uiStage .view canvas{flex:1;min-height:190px;height:100%;border:1px solid #223b54;border-radius:8px}
+#uiStage #movementAlert{margin:0;font-size:12px;box-shadow:none}
+#uiStageBar .ui-stage-heading{min-width:0;flex:1 1 320px}
+#uiStageBar .ui-stage-hints{margin-top:3px;color:#7f9fb7;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+
+#uiStage[data-view-mode="iso"] .views{grid-template-columns:1fr;grid-template-rows:1fr;height:clamp(550px,calc(100vh - 230px),850px);min-height:550px}
+#uiStage[data-view-mode="iso"] .view:not(.ui-orbit-view){display:none}
+#uiStage[data-view-mode="iso"] .ui-orbit-view{display:flex}
+#uiStage .panel.view.is-collapsed{height:auto}
+#uiStage .panel.view.is-collapsed canvas{display:none}
+#uiStage .panel.view.is-collapsed p{display:none}
+.workspace-sidebar{display:block!important;max-height:calc(100vh - 110px);overflow:auto;overscroll-behavior:contain;scrollbar-color:#31576d transparent;scrollbar-width:thin;padding-right:3px}
+#uiWorkspaceTitle{padding:16px;background:linear-gradient(145deg,#113444,#12253c);border-radius:13px;border:1px solid #31566a;margin-bottom:10px}
+#uiWorkspaceTitle .ui-brow{color:#68cfc4;letter-spacing:.11em;text-transform:uppercase;font-size:10px;font-weight:750;margin:0 0 7px}
+#uiWorkspaceTitle h2{margin:0 0 6px;font-size:18px;color:#f3faff}
+#uiWorkspaceTitle p{font-size:12px;color:#a9c3d5;line-height:1.6;margin:0}
+.ui-workspace-page{display:none;min-width:0;animation:uiFade .14s ease-in}
+.ui-workspace-page.is-active{display:flex;flex-direction:column;gap:11px}
+.ui-workspace-page .panel{margin:0;min-width:0}
+.ui-workspace-page .panel h2{font-size:15px}
+.ui-workspace-page .panel-collapse-bar{margin:0 0 10px}
+.ui-workspace-page .panel-collapse-title{font-size:14px;font-weight:700;color:#daedf8}
+.ui-workspace-page .panel-collapse-bar button{background:#1c354c;color:#b6d5e2;border-color:#31566a}
+@keyframes uiFade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}
+#uiWorkspaceJumps{display:none;gap:6px;flex-wrap:wrap;padding-bottom:10px}
+#uiWorkspaceJumps button{font-size:11px;border-radius:18px;padding:6px 10px;background:#152b42;color:#a8cad7;border-color:#355269}
+#uiWorkspaceJumps.is-active{display:flex}
+.ui-workspace-page .joysticks-fixed{position:static!important;box-shadow:none;border-color:#2c5667;z-index:auto;margin:0}
+.ui-workspace-page .joysticks-fixed #axisControls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;overflow:visible}
+.ui-workspace-page .joysticks-fixed .axis{padding:8px;min-width:0}
+.ui-workspace-page .joysticks-fixed .axis .muted{display:initial}
+.ui-workspace-page .joysticks-fixed .joy{width:60px;height:60px}
+.ui-workspace-page .joysticks-fixed .knob{left:17px;top:17px;width:25px;height:25px}
+.ui-workspace-page .joysticks-fixed .axis h3{font-size:12px}
+.ui-workspace-page .joysticks-fixed .joyline button{padding:5px}
+.ui-workspace-page #axisSettingsPanel .axis-settings{display:grid;grid-template-columns:1fr;gap:9px}
+.ui-workspace-page #axisSettingsPanel .axis-params{background:#0c1d2f}
+.ui-workspace-page #robotShapePanel details{border:1px solid #2b4860;padding:8px;border-radius:8px;margin:7px 0}
+.ui-workspace-page #robotShapePanel summary{cursor:pointer;font-weight:600}
+.ui-workspace-page input[type=number],.ui-workspace-page input[type=text],.ui-workspace-page select{font-size:12px;padding:8px;min-height:33px}
+.ui-workspace-page button{min-height:31px}
+.ui-workspace-page label.field{line-height:1.5}
+.ui-workspace-page .vertex-help{font-size:11px;line-height:1.65}
+.ui-workspace-page #zoneEditor{min-width:0}
+.ui-workspace-page .scroll{max-height:310px}
+.ui-workspace-page #faceCoordinateEditor .point{padding:6px}
+.ui-workspace-page .table-wrapper,.ui-workspace-page #collisionMathTable{overflow-x:auto}
+.ui-workspace-page .table-wrapper table{min-width:540px}
+.ui-workspace-page .point-builder{border:1px solid #2e6b70;background:#0e3037;padding:11px;border-radius:9px;margin:8px 0}
+.ui-zone-options{padding:9px 10px;border:1px solid #2c4b5e;border-radius:8px;background:#0d1d2e;margin:8px 0}
+.ui-zone-options summary{cursor:pointer;color:#bdddea;font-size:12px;font-weight:650}
+.ui-zone-options .buttons{margin-top:10px}
+#uiZonesPanel .buttons button{font-size:12px}
+#uiZonesPanel .ui-zone-tool-hint{color:#89c9c6;font-size:11px;margin:7px 0}
+#uiZonesPanel .vertex-facebar{display:none}
+#uiZonesPanel[data-tool-mode="vertex"] .ui-face-select,#uiZonesPanel[data-tool-mode="insert"] .ui-face-select{display:flex}
+#uiZonesPanel[data-tool-mode="group"] #bulkControls,#uiZonesPanel[data-tool-mode="face"] #bulkControls{display:grid!important}
+#uiZonesPanel #bulkControls{display:none!important;gap:7px!important}
+#uiZonesPanel #pointBuilder[hidden]{display:none!important}
+#uiZonesPanel .vertex-help{margin-top:6px}
+.ui-project-box{padding:15px;border-radius:13px;border:1px solid #2e5065;background:#10253a}
+.ui-project-box h3{margin:0 0 8px;font-size:15px;color:#e0f6ff}
+.ui-project-box .ui-project-text{color:#b5ccdf;font-size:12px;line-height:1.7}
+.ui-project-box .buttons button{font-weight:650}
+.ui-project-box .ui-project-save{background:#0c716f;border-color:#42b9b1}
+.ui-subnote{font-size:11px;color:#8ba5bc;line-height:1.55}
+.ui-guide-list{margin:10px 0 4px;padding-left:18px;color:#aec9d9;font-size:12px;line-height:1.85}
+.ui-guide-list b{color:#d9ebf5}
+.ui-notice-tag{display:inline-block;padding:3px 7px;border-radius:5px;background:#163d46;color:#78d8c7;font-size:10px;font-weight:650;margin-bottom:8px}
+@media (min-width:1150px){#uiStage{position:sticky;top:79px}}
+@media (max-width:1149px){main.layout{grid-template-columns:minmax(0,1fr)}.workspace-sidebar{max-height:none;overflow:visible}#uiStage .views{height:640px}}
+@media (max-width:700px){header{padding:12px 14px}header h1{font-size:17px}header .buttons{width:100%;justify-content:flex-start}header .buttons button{font-size:11px}#uiWorkspaceNav{padding:8px 10px;gap:3px}#uiWorkspaceNav .nav-kicker,#uiWorkspaceNav .nav-help{display:none}#uiWorkspaceNav .ui-workspace-tab{padding:10px 12px;font-size:12px}#uiWorkspaceNav .ui-workspace-tab .ui-tab-number{display:none}main.layout{padding:10px;gap:12px}#uiStage .views{grid-template-columns:1fr;grid-template-rows:repeat(4,290px);height:auto;min-height:0}#uiStage[data-view-mode="iso"] .views{height:570px}#uiStage .view canvas{min-height:180px}#uiStageBar{padding:10px}.ui-workspace-page .joysticks-fixed #axisControls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:380px){.ui-workspace-page .joysticks-fixed #axisControls{grid-template-columns:1fr}#uiStage .views{grid-template-rows:repeat(4,260px)}}
+
+/* V38 — les rangées suivent la hauteur réelle des panneaux : aucun chevauchement.
+   Neutralise les anciennes tailles fixes (355px / grille 630px) devenues incompatibles. */
+#uiStage .views{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(2,max-content);
+  height:auto;
+  min-height:0;
+  align-items:stretch;
+  align-content:start;
+  gap:12px;
+}
+#uiStage .views > .panel.view{
+  min-height:0;
+  height:auto;
+  align-self:stretch;
+  overflow:hidden;
+}
+#uiStage .views > .panel.view:not(.is-collapsed) canvas{
+  width:100%;
+  height:clamp(225px,26vh,310px);
+  min-height:0;
+  flex:0 0 auto;
+  display:block;
+}
+#uiStage .views > .panel.view p.muted{flex:0 0 auto;line-height:1.4;}
+/* La vue orbitale seule utilise toute la largeur et dispose d'une hauteur propre. */
+#uiStage[data-view-mode="iso"] .views{
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:max-content;
+  height:auto;
+  min-height:0;
+}
+#uiStage[data-view-mode="iso"] .views > .ui-orbit-view:not(.is-collapsed) canvas{
+  height:clamp(420px,65vh,720px);
+}
+@media(max-width:700px){
+  #uiStage .views{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:none;
+    grid-auto-rows:max-content;
+    height:auto;
+    min-height:0;
+  }
+  #uiStage .views > .panel.view:not(.is-collapsed) canvas{
+    height:clamp(230px,35vh,310px);
+  }
+  #uiStage[data-view-mode="iso"] .views > .ui-orbit-view:not(.is-collapsed) canvas{
+    height:clamp(350px,58vh,600px);
+  }
+}
+</style></head><body><header><div><h1>Robot 4 axes — V38 · Quatre vues sans chevauchement</h1><div class="muted">Robot sur mesure · zones éditables · calculs d’anticollision · projet rechargeable</div></div><div class="buttons"><button id="reset">Angles à zéro</button><button id="export">Exporter configuration JSON</button><button id="import">Importer JSON</button><input id="file" type="file" accept=".json" hidden></div></header><main class="layout"><section><section class="panel joysticks-fixed"><div class="head"><h2>Pilotage des 4 articulations</h2><button type="button" id="goSettings">Modifier type / longueur</button></div><div id="axisControls"></div><div id="movementAlert" role="status" aria-live="polite">Aucun mouvement refusé.</div><p class="muted" style="margin:4px 0 0">Sur petit écran : faire défiler les 4 commandes horizontalement, sans déplacer la page.</p></section><section class="panel" id="axisSettingsPanel" style="margin-bottom:12px;scroll-margin-top:180px"><div class="head"><h2>Configuration des 4 articulations — paramètres modifiables</h2><button id="settingsHelp" type="button">Comment régler ?</button></div><p class="muted">Pour chaque axe : choisir la rotation <b>horizontale ou verticale</b>, régler la <b>longueur, le rayon physique et la marge anticollision (mm)</b>, les <b>butées min/max</b> et le <b>sens du joystick</b>. Les calculs et les 4 vues se mettent à jour automatiquement.</p><div id="axisSettings" class="axis-settings" style="margin-top:10px"></div></section><section class="panel" id="robotShapePanel"><h2>Bras sur mesure — formes des 4 segments</h2><p class="muted">Chaque axe peut avoir une forme propre définie par des sections le long du segment : position entre 0 et 100 %, demi-largeur et demi-hauteur (mm). Les sections sont reliées pour dessiner un volume 3D personnalisable. Ajouter, supprimer ou déplacer des sections. Le rayon d’anticollision utilise une enveloppe circulaire conservatrice égale au plus grand demi-axe du profil, plus la marge.</p><div id="customShapeEditor"></div><p class="muted" id="customShapeStatus" role="status">La géométrie d’affichage est personnalisable. Les articulations conservent la cinématique actuelle à 4 axes ; aucun décalage cinématique personnalisé n’est ajouté.</p></section><section class="panel" id="livePanel"><div class="live-heading"><h2>Comprendre les calculs — en direct</h2><label class="field">Détail de l'articulation<select id="liveAxis"><option value="0">Axe 1</option><option value="1">Axe 2</option><option value="2">Axe 3</option><option value="3">Axe 4</option></select></label></div><div class="clarity-intro"><b>Comment lire ces calculs ?</b><br>1. On lit l’angle et la longueur d’un axe. 2. On calcule combien le segment avance sur X, Y et Z. 3. On additionne ce déplacement à la position précédente. 4. On teste les segments contre chaque zone interdite. <b>Tout se recalcule pendant les mouvements.</b></div><div id="liveSummary" class="gridlive"></div><div id="liveMath" class="explanation"></div><div class="table-wrapper"><table><thead><tr><th>Segment</th><th>Longueur</th><th>ΔX</th><th>ΔY</th><th>ΔZ</th><th>Position finale X/Y/Z</th><th>Zones non autorisées</th></tr></thead><tbody id="liveTable"></tbody></table></div><div id="livePath" class="explanation"></div><div id="blockedDiagnostics" hidden></div><p class="muted">Le contrôle actuel détecte l'intersection des lignes centrales des segments avec les volumes polygonaux extrudés. Il calcule la distance entre la ligne centrale et le volume de chaque zone, puis retire le rayon et la marge propres à chaque segment. La vérification d’une trajectoire reste échantillonnée. Le balayage angulaire est discret et ne garantit pas une trajectoire sans collision.</p></section><div class="views"><div class="panel view"><h2>Vue de dessus — X / Y</h2><canvas id="top"></canvas><p class="muted">Rouge : volumes interdits projetés au sol</p></div><div class="panel view"><h2>Vue de côté — X / Z</h2><canvas id="side"></canvas><p class="muted">Projection du bras et des obstacles selon X / Z</p></div><div class="panel view"><h2>Vue de face — Y / Z</h2><canvas id="front"></canvas><p class="muted">Projection du bras et des obstacles selon Y / Z</p></div><div class="panel view"><h2>Vue 3/4 — caméra orbitale</h2><canvas id="iso"></canvas><p class="muted">Glisser : orbite · Maj + glisser : panoramique · Molette : zoom · Tube coloré : rayon physique · Volume orange transparent : marge incluse</p></div></div><section class="panel" style="margin-top:12px"><h2>Coordonnées calculées sur chaque articulation</h2><div class="scroll"><table class="coords"><thead><tr><th>Point</th><th>X (mm)</th><th>Y (mm)</th><th>Z (mm)</th><th>Azimut</th><th>Élévation</th></tr></thead><tbody id="positionRows"></tbody></table></div><p class="muted">Les points J0–J4 sont affichés directement sur les quatre vues. J0 correspond à la base ; J4 correspond à l'extrémité TCP.</p></section><section class="panel" style="margin-top:12px"><details><summary style="cursor:pointer;font-weight:700">Afficher les calculs des 4 articulations (détail complet)</summary><div id="equations" style="margin-top:10px"></div></details></section></section><aside class="sidebar"><section class="panel"><h2>État de la simulation</h2><div id="status" class="status"></div><div class="grid3" style="margin-top:10px"><label class="field">Base X (mm)<input id="baseX" type="number" value="0"></label><label class="field">Base Y (mm)<input id="baseY" type="number" value="0"></label><label class="field">Base Z (mm)<input id="baseZ" type="number" value="0"></label></div><label style="display:block;margin:9px 0"><input id="block" type="checkbox" checked> Bloquer le déplacement en collision</label><label><input id="showLabels" type="checkbox" checked> Afficher les coordonnées sur les articulations</label><div class="grid2" style="margin-top:10px"><label class="field">Pas max. de balayage (°)<input id="sweepStep" type="number" min="0.05" max="5" step="0.05" value="0.25"></label><label class="field">Pas max. déplacement segment (mm)<input id="sweepMM" type="number" min="0.1" max="10" step="0.1" value="1"></label></div><p class="muted">Le balayage suit les mouvements commandés, vérifie tous les segments contre toutes les zones actives et s'arrête près du premier contact. Un mouvement échantillonné ne constitue pas une garantie de sécurité machine.</p></section><section class="panel"><h2>Zones interdites par points X/Y ou X/Z ou Y/Z</h2><div class="buttons"><button id="toolMove" class="active">Déplacer les zones</button><button id="toolVertex">Déplacer les sommets</button><button id="toolGroup">Déplacer un groupe</button><button id="toolFace">Déplacer une face</button><button id="toolAddVertex">+ Sommet par clic</button><button id="toolAddSideVertex">+ Sommet sur côté</button><button id="toolPan">Déplacer la vue</button></div><div class="vertex-help" id="vertexHelp">Mode Déplacer les sommets : les poignées P1, P2… apparaissent sur les deux faces du volume dans les quatre vues. Glisser une poignée pour modifier sa position. En vue 3/4 : clic-glisser une poignée pour modifier le contour dans son plan ; Alt + glisser pour ajuster sa profondeur. Mode + Sommet sur côté : clique où tu veux sur une face latérale visible, surtout dans la vue 3/4. Le sommet C déforme la face latérale dans toutes les projections et pourra être déplacé en mode sommets. Une seule poignée C par face latérale pour le moment. Mode « Nouvelle zone point par point » : placer les sommets un à un par clic sur le plan choisi, puis fermer le polygone. Mode + Sommet : cliquer sur une arête du contour (également en 3/4) pour insérer un nouveau point entre ses deux voisins. Cliquer hors d’une poignée en 3/4 permet de tourner la caméra. Maj + glisser = déplacer la vue.</div><div class="vertex-facebar"><label class="field">Face à modifier<select id="faceSelect"><option value="0">Face basse (A) uniquement</option><option value="1">Face haute (B) uniquement</option><option value="auto">Sélection automatique</option></select></label><span class="muted">Les sommets hauts et bas se déplacent désormais indépendamment. Sélectionne la face à modifier. Les parois latérales relient automatiquement les deux contours.</span></div><div class="vertex-facebar" id="bulkControls" style="display:grid;gap:8px">
 <label class="field">Face / côté à déplacer<select id="bulkFace"><option value="0">Face basse entière</option><option value="1">Face haute entière</option></select></label>
 <div class="buttons"><button type="button" id="selectFaceVertices">Sélectionner tous les sommets de la face</button><button type="button" id="clearGroup">Vider la sélection</button></div>
 <div id="groupSelectionInfo" class="muted">Mode Groupe : clique sur plusieurs sommets pour les sélectionner ; glisse l'un des sommets sélectionnés pour déplacer le groupe. Mode Face : sélectionne la face ou le côté, puis glisse une poignée de cette face.</div>
-</div><div id="vertexEditStatus" class="muted" aria-live="polite">Sélectionne une zone puis choisis un outil.</div><p class="muted">Ajouter les sommets soit par coordonnées ci-dessous, soit par un clic sur une arête depuis les quatre vues. Chaque sommet possède une poignée basse et une poignée haute. Tu peux déplacer une seule face sans modifier l'autre. L'ajout d'un sommet conserve une paire correspondante afin de maintenir les faces latérales.</p><div class="buttons"><button class="primary" id="newZone">+ Nouvelle zone</button></div><div id="zoneEditor"></div></section><section class="panel" id="calculationExportPanel">
+</div><div id="vertexEditStatus" class="muted" aria-live="polite">Sélectionne une zone puis choisis un outil.</div><p class="muted">Ajouter les sommets soit par coordonnées ci-dessous, soit par un clic sur une arête depuis les quatre vues. Chaque sommet possède une poignée basse et une poignée haute. Tu peux déplacer une seule face sans modifier l'autre. L'ajout d'un sommet conserve une paire correspondante afin de maintenir les faces latérales.</p><div class="buttons"><button class="primary" id="newZone">+ Nouvelle zone (rectangle)</button><button id="startPointZone" class="primary">+ Nouvelle zone point par point</button></div>
+<div class="point-builder" id="pointBuilder" hidden>
+<h3>Construction d’une zone — sommet par sommet</h3>
+<p class="muted">Choisis un plan et clique une fois pour chaque sommet, dans la vue de dessus (XY), de côté (XZ) ou de face (YZ). Tu peux également saisir les coordonnées exactes. La vue 3/4 affiche la prévisualisation. Termine avec « Fermer et créer » (3 sommets minimum).</p>
+<div class="grid2"><label class="field">Plan du contour<select id="pointPlane"><option value="XY">XY — vue de dessus</option><option value="XZ">XZ — vue de côté</option><option value="YZ">YZ — vue de face</option></select></label><label class="field">Nom de la zone<input id="pointZoneName" value="Zone par points"></label></div>
+<div class="grid2"><label class="field">Profondeur minimum (mm)<input id="pointMin" type="number" value="-50" step="1"></label><label class="field">Profondeur maximum (mm)<input id="pointMax" type="number" value="150" step="1"></label></div>
+<div class="grid3"><label class="field">Point X (mm)<input id="pointX" type="number" value="0" step="0.1"></label><label class="field">Point Y (mm)<input id="pointY" type="number" value="0" step="0.1"></label><label class="field">Point Z (mm)<input id="pointZ" type="number" value="0" step="0.1"></label></div>
+<div class="buttons"><button id="addPointXYZ">+ Ajouter ce sommet</button><button id="undoPointXYZ">Annuler dernier</button><button id="finishPointXYZ" class="primary">Fermer et créer la zone</button><button id="cancelPointXYZ">Annuler la création</button></div>
+<div class="muted" id="pointBuilderStatus" aria-live="polite"></div><div id="pointBuilderList"></div>
+</div><div id="zoneEditor"></div></section><section class="panel" id="calculationExportPanel">
 <h2>Tableur des calculs — sans animation</h2>
 <p class="muted">Cette section rassemble les valeurs numériques actuelles : paramètres des 4 axes, positions 3D calculées et contrôles de dégagement contre chaque zone active. Le tableur est indépendant des animations et reflète l'état au moment de l'export.</p>
 <div class="buttons"><button type="button" id="calcExportCSV" class="primary">Télécharger les calculs (.csv)</button><button type="button" id="calcRefresh">Actualiser le tableau</button></div>
@@ -113,10 +284,177 @@
 <h3>Résultat de chaque contrôle</h3><div id="collisionMathTable"></div>
 <p class="muted">Les angles et zones sont vérifiés à la configuration actuelle. Le calcul prend en compte le rayon et la marge ; il ne constitue pas une fonction de sécurité certifiée.</p>
 </section><section class="panel"><h2>Anticollision — vérification et explications</h2><div id="collisionDetail" class="status"></div><div id="sweepDetail" class="explanation"></div><button id="recheck">Recalculer les collisions</button><div class="divider"></div><h2>Test des combinaisons des quatre axes</h2><div class="grid2"><label class="field">Pas (°)<input id="step" type="number" value="15" min="1" max="90"></label><label class="field">Limite (échantillons)<input id="limit" type="number" value="200000" min="1" max="2000000"></label></div><div class="buttons"><button id="scan">Analyser toute la matrice</button><button id="stop">Arrêter</button><button id="exportMatrix">Exporter CSV intégral</button></div><div id="scanStatus" class="status"></div><div class="buttons"><button id="matrixPrev">← Précédent</button><span id="matrixPage" class="muted"></span><button id="matrixNext">Suivant →</button></div><div id="matrixOutput"></div><p class="muted">Le tableau affiche 100 lignes par page, mais toutes les combinaisons calculées sont exportables en CSV (axes 1 à 4, autorisation, zone(s) responsables). Le test énumère des positions, pas les mouvements continus entre elles. Le contrôle interactif balaie les trajectoires angulaires par pas configurables. Il est plafonné pour préserver les performances du navigateur.</p></section><section class="panel"><h2>Modèle utilisé</h2><div id="help">Cinématique géométrique avec repères locaux mobiles : un axe H tourne autour du Z LOCAL et un axe V autour du −Y LOCAL. Chaque nouvelle rotation est appliquée dans le repère hérité des articulations précédentes. L'orientation finale de chaque segment est ensuite convertie en azimut/élévation pour les tableaux. Ce modèle pédagogique ne comprend pas les décalages mécaniques et les axes réels de chaque robot industriel.</div></section></aside></main>
+<script id="ui-v36-bootstrap">
+(() => {
+'use strict';
+const $=id=>document.getElementById(id);
+const main=document.querySelector('main.layout');
+const stage=main.querySelector(':scope > section');
+const side=main.querySelector(':scope > aside.sidebar');
+const oldStage=[...stage.children], oldSide=[...side.children];
+const joystick=oldStage.find(el=>el.classList.contains('joysticks-fixed'));
+const axis=oldStage.find(el=>el.id==='axisSettingsPanel');
+const shapes=oldStage.find(el=>el.id==='robotShapePanel');
+const live=oldStage.find(el=>el.id==='livePanel');
+const views=oldStage.find(el=>el.classList.contains('views'));
+const coords=oldStage.find(el=>!!el.querySelector('#coords'))||oldStage.find(el=>el.querySelector('h2')?.textContent.includes('Coordonnées calculées'));
+const detail=oldStage.find(el=>el.querySelector('details')?.textContent.includes('calculs des 4 articulations'));
+const settings=oldSide.find(el=>!!el.querySelector('#baseX'));
+const zones=oldSide.find(el=>!!el.querySelector('#zoneEditor'));
+const csv=oldSide.find(el=>el.id==='calculationExportPanel');
+const collision=oldSide.find(el=>el.id==='collisionMathPanel');
+const matrix=oldSide.find(el=>!!el.querySelector('#scan'));
+const model=oldSide.find(el=>!!el.querySelector('#help'));
+if([joystick,axis,shapes,live,views,coords,detail,settings,zones,csv,collision,matrix,model].some(x=>!x)){
+ console.error('V36 : réorganisation non appliquée, panneau manquant.');return;
+}
+stage.id='uiStage';side.classList.add('workspace-sidebar');
+const catalog=[
+ ['pilot','Pilotage','Commander le robot','Joysticks et réglages de la simulation.'],
+ ['robot','Bras personnalisé','Configurer les articulations','Dimensions, butées et formes des quatre segments.'],
+ ['zones','Zones interdites','Construire les obstacles','Placement sommet par sommet, faces et groupes.'],
+ ['analysis','Calculs et collisions','Analyser la géométrie','Coordonnées, collisions, matrice et exports.'],
+ ['project','Projet','Sauvegarder la configuration','Exporter un projet complet ou charger un fichier JSON.']
+];
+const nav=document.createElement('nav');nav.id='uiWorkspaceNav';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','Espaces de travail');
+nav.innerHTML='<span class="nav-kicker" aria-hidden="true">Espace de travail</span>';
+const tabs=new Map(),pages=new Map();
+const meta=document.createElement('div');meta.id='uiWorkspaceTitle';
+const jumps=document.createElement('div');jumps.id='uiWorkspaceJumps';
+const collection=document.createElement('div');collection.id='uiPages';
+for(let i=0;i<catalog.length;i++){
+ const [id,label]=catalog[i];
+ const btn=document.createElement('button');btn.type='button';btn.id='ui-tab-'+id;btn.className='ui-workspace-tab';
+ btn.setAttribute('role','tab');btn.setAttribute('aria-controls','ui-page-'+id);
+ const number=document.createElement('span');number.className='ui-tab-number';number.textContent='0'+(i+1);
+ const name=document.createElement('span');name.textContent=label;btn.append(number,name);
+ tabs.set(id,btn);nav.append(btn);
+ const page=document.createElement('section');page.id='ui-page-'+id;page.className='ui-workspace-page';
+ page.setAttribute('role','tabpanel');page.setAttribute('aria-labelledby',btn.id);
+ pages.set(id,page);collection.append(page);
+ btn.addEventListener('click',()=>switchTab(id));
+}
+const spacer=document.createElement('span');spacer.className='ui-spacer';nav.append(spacer);
+const helpNav=document.createElement('span');helpNav.className='nav-help';helpNav.textContent='Visualisation toujours accessible';nav.append(helpNav);
+main.before(nav);
+side.replaceChildren(meta,jumps,collection);
+
+pages.get('pilot').append(joystick,settings);
+pages.get('robot').append(axis,shapes);
+pages.get('zones').append(zones);
+pages.get('analysis').append(live,coords,detail,collision,matrix,csv);
+pages.get('project').append(model);
+
+const project=document.createElement('section');project.className='ui-project-box';project.innerHTML=`
+ <div class="ui-notice-tag">PROJET LOCAL</div><h3>Gérer une configuration</h3>
+ <p class="ui-project-text">Sauvegarde les articulations, les profils sur mesure, toutes les zones et leurs sommets, les réglages de collision, la caméra et l'espace de travail dans un seul fichier JSON.</p>
+ <div class="buttons"><button type="button" class="ui-project-save" id="uiSaveProject">Enregistrer mon projet (.json)</button><button type="button" id="uiLoadProject">Recharger un projet</button></div>
+ <p class="ui-subnote">L'enregistrement crée un fichier sur ton ordinateur. Il ne s'effectue pas automatiquement.</p>
+ <div class="divider"></div><h3>Repères rapides</h3>
+ <ul class="ui-guide-list"><li><b>Pilotage</b> : déplacer les quatre axes.</li><li><b>Bras personnalisé</b> : dimensions, limites et forme.</li><li><b>Zones interdites</b> : construire ou déformer un obstacle.</li><li><b>Calculs et collisions</b> : résultats et exports.</li></ul>
+ <div class="buttons"><button type="button" id="uiResetAngles">Remettre les angles à zéro</button></div>
+ <p class="ui-subnote">Les tests de collision restent des calculs de simulation et ne remplacent pas un système de sécurité certifié.</p>`;
+pages.get('project').prepend(project);
+$('uiSaveProject').addEventListener('click',()=>$('export').click());
+$('uiLoadProject').addEventListener('click',()=>$('import').click());
+$('uiResetAngles').addEventListener('click',()=>$('reset').click());
+
+const stageBar=document.createElement('div');stageBar.id='uiStageBar';
+stageBar.innerHTML=`<div class="ui-stage-heading"><h2>Visualisation 3D & projections</h2><div class="ui-subheading">Vues : XY dessus · XZ côté · YZ face · 3/4 orbitale</div><div class="ui-stage-hints">Caméra 3/4 : glisser pour tourner · molette pour zoomer · Maj + glisser pour déplacer</div></div><div id="uiViewChooser" role="group" aria-label="Disposition des vues"><button type="button" id="uiQuad">4 vues</button><button type="button" id="uiOrbit">3/4 agrandie</button></div>`;
+stage.replaceChildren(stageBar,views);
+views.querySelector('#iso')?.closest('.view')?.classList.add('ui-orbit-view');
+const alert=$('movementAlert');stage.append(alert);
+// La légende générale n'est pas placée sous les vues :
+// les axes figurent dans les titres des vues et les gestes restent dans l'en-tête.
+
+
+// Zone editor: keep every existing command, but expose advanced commands on demand.
+zones.id='uiZonesPanel';zones.dataset.toolMode='move';
+const createButtons=$('newZone')?.closest('.buttons');
+if(createButtons)zones.querySelector('h2')?.after(createButtons);
+const toolbar=zones.querySelector('.buttons:not(:has(#newZone))');
+const advanced=document.createElement('details');advanced.className='ui-zone-options';
+const summary=document.createElement('summary');summary.textContent='Outils avancés : groupes, faces, caméra';advanced.append(summary);
+const advancedButtons=document.createElement('div');advancedButtons.className='buttons';advanced.append(advancedButtons);
+for(const id of ['toolGroup','toolFace','toolPan']){const button=$(id);if(button)advancedButtons.append(button)}
+toolbar.after(advanced);
+const instructions=$('vertexHelp');
+const guide=document.createElement('details');guide.className='ui-zone-options';
+guide.innerHTML='<summary>Voir les instructions détaillées des outils</summary>';
+guide.append(instructions);advanced.after(guide);
+const firstFace=zones.querySelector('.vertex-facebar');if(firstFace)firstFace.classList.add('ui-face-select');
+const editStatus=$('vertexEditStatus');
+const longNote=editStatus?.nextElementSibling;
+if(longNote?.matches('p.muted')){
+ const note=document.createElement('details');note.className='ui-zone-options';
+ const heading=document.createElement('summary');heading.textContent='Comprendre les poignées hautes et basses';
+ note.append(heading,longNote);editStatus.after(note);
+}
+const status=document.createElement('div');status.className='ui-zone-tool-hint';status.id='uiToolHint';status.textContent='Outil actif : déplacer les zones.';advanced.after(status);
+const toolLabels={toolMove:'Déplacer les zones',toolVertex:'Sommets individuels',toolGroup:'Groupe de sommets',toolFace:'Face entière',toolAddVertex:'Ajouter sur une arête',toolAddSideVertex:'Créer un sommet latéral',toolPan:'Déplacer la vue'};
+for(const [id,label] of Object.entries(toolLabels)){
+ $(id)?.addEventListener('click',()=>{
+  zones.dataset.toolMode={toolMove:'move',toolVertex:'vertex',toolGroup:'group',toolFace:'face',toolAddVertex:'insert',toolAddSideVertex:'sideAdd',toolPan:'pan'}[id];
+  status.textContent='Outil actif : '+label+'.';
+  if(id==='toolGroup'||id==='toolFace')advanced.open=true;
+ });
+}
+
+const analysisLinks=[['livePanel','Calculs en direct'],['collisionMathPanel','Collisions'],['uiMatrixPanel','Matrice'],['calculationExportPanel','Export CSV']];
+matrix.id='uiMatrixPanel';
+for(const [id,label] of analysisLinks){const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>{
+ const target=$(id);const fold=target?.querySelector(':scope > .panel-collapse-bar button');
+ if(target?.classList.contains('is-collapsed'))fold?.click();
+ target?.scrollIntoView({behavior:'smooth',block:'start'});
+});jumps.append(b)}
+
+let tab='pilot',viewMode='quad';
+function switchTab(id){
+ if(!pages.has(id))id='pilot';tab=id;
+ for(const [k,el] of pages){const active=k===id;el.classList.toggle('is-active',active);el.hidden=!active;tabs.get(k).setAttribute('aria-selected',String(active));tabs.get(k).tabIndex=active?0:-1;}
+ const selected=catalog.find(t=>t[0]===id);
+ meta.replaceChildren();
+ const top=document.createElement('div');top.className='ui-brow';top.textContent=selected[1];
+ const heading=document.createElement('h2');heading.textContent=selected[2];
+ const description=document.createElement('p');description.textContent=selected[3];meta.append(top,heading,description);
+ jumps.classList.toggle('is-active',id==='analysis');
+ if(side.scrollTop)side.scrollTo({top:0,behavior:'instant'});
+ // A zone-construction flow always directs the user to the correct tools.
+ try{sessionStorage.setItem('robot-v36-tab',id)}catch{}
+}
+function chooseView(mode){
+ viewMode=mode==='iso'?'iso':'quad';stage.dataset.viewMode=viewMode;
+ $('uiQuad').setAttribute('aria-pressed',String(viewMode==='quad'));
+ $('uiOrbit').setAttribute('aria-pressed',String(viewMode==='iso'));
+ try{sessionStorage.setItem('robot-v36-view',viewMode)}catch{}
+ // ResizeObserver in the simulator automatically repaints the resized canvases.
+}
+$('uiQuad').addEventListener('click',()=>chooseView('quad'));
+$('uiOrbit').addEventListener('click',()=>chooseView('iso'));
+nav.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+ const arr=[...tabs.keys()];let idx=arr.indexOf(tab);
+ idx=e.key==='Home'?0:e.key==='End'?arr.length-1:(idx+(e.key==='ArrowRight'?1:-1)+arr.length)%arr.length;
+ e.preventDefault();switchTab(arr[idx]);tabs.get(arr[idx]).focus();});
+// Intercept the legacy "go to settings" handler: its panel now lives in another tab.
+$('goSettings').addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();switchTab('robot');
+ if(axis.classList.contains('is-collapsed'))axis.querySelector(':scope > .panel-collapse-bar button')?.click();
+ axis.scrollIntoView({behavior:'smooth',block:'start'});
+},true);
+let firstTab='pilot',firstView='quad';
+try{firstTab=sessionStorage.getItem('robot-v36-tab')||'pilot';firstView=sessionStorage.getItem('robot-v36-view')||'quad'}catch{}
+switchTab(firstTab);chooseView(firstView);
+window.robotWorkspaceUI={get:()=>({tab,viewMode}),restore:ui=>{
+ if(!ui||typeof ui!=='object')return;
+ if(typeof ui.tab==='string'&&pages.has(ui.tab))switchTab(ui.tab);
+ if(ui.viewMode==='iso'||ui.viewMode==='quad')chooseView(ui.viewMode);
+ },open:switchTab};
+})();
+</script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id),rad=d=>d*Math.PI/180,deg=r=>r*180/Math.PI,fix=n=>Number(n).toFixed(2),clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const color=['#48d5cc','#f3c06b','#ae9cff','#f18b98'];let axes=[{angle:0,min:-45,max:45,length:110,radius:12,margin:8,type:'H',rev:false},{angle:0,min:-45,max:45,length:95,radius:12,margin:8,type:'V',rev:false},{angle:0,min:-45,max:45,length:85,radius:10,margin:8,type:'V',rev:false},{angle:0,min:-45,max:45,length:65,radius:8,margin:8,type:'H',rev:false}],zones=[],selected=-1,orbit={azimuth:0.78,elevation:0.62},zoom=1.12,scanToken=0,blockReason='',editTool='move',hoverHandle=null,activeVertex=-1,matrix=null,matrixPage=0,scanBusy=false;
+let zoneDraft=null;
 const views={top:{canvas:$('top'),pan:{x:0,y:0}},side:{canvas:$('side'),pan:{x:0,y:0}},front:{canvas:$('front'),pan:{x:0,y:0}},iso:{canvas:$('iso'),pan:{x:0,y:0}}};
 const vec=(x,y,z)=>({x,y,z}),add=(p,q)=>vec(p.x+q.x,p.y+q.y,p.z+q.z);
 // Cinématique directe avec rotations AUTOUR DES REPÈRES LOCAUX.
@@ -197,7 +535,21 @@ function zoneTriangles(z){const signature=JSON.stringify([z.plane,z.range,z.poly
 function meshIntersection(a,b,z){const tris=zoneTriangles(z);if(!tris)return null;const dir=sub3(b,a);for(const [p,q,r] of tris){const h=cross3(dir,sub3(r,p)),e1=sub3(q,p),det=dot3(e1,h);if(Math.abs(det)<1e-10)continue;const inv=1/det,s=sub3(a,p),u=dot3(s,h)*inv;if(u<0||u>1)continue;const k=cross3(s,e1),v=dot3(dir,k)*inv;if(v<0||u+v>1)continue;const t=dot3(sub3(r,p),k)*inv;if(t>=0&&t<=1)return{t,p:add(a,mult3(dir,t))}}return null}
 function insideMesh(pt,z){const far={x:pt.x+1e7,y:pt.y+137.137,z:pt.z+273.531},a=pt,b=far,dir=sub3(b,a);let count=0;for(const [p,q,r] of zoneTriangles(z)||[]){const e1=sub3(q,p),e2=sub3(r,p),h=cross3(dir,e2),det=dot3(e1,h);if(Math.abs(det)<1e-10)continue;const inv=1/det,s=sub3(a,p),u=inv*dot3(s,h);if(u<0||u>1)continue;const k=cross3(s,e1),v=inv*dot3(dir,k);if(v<0||u+v>1)continue;const t=inv*dot3(e2,k);if(t>1e-9&&t<1)count++}return count%2===1}
 function distanceZone(a,b,z){const deformed=(z.sideNodes&&Object.keys(z.sideNodes).length)||hasFaceOverrides(z);const penetrates=deformed?(meshIntersection(a,b,z)||(insideMesh(a,z)?{t:0,p:a}:insideMesh(b,z)?{t:1,p:b}:null)):segmentHit(a,b,z);if(penetrates)return{distance:0,t:penetrates.t,p:penetrates.p};const triangles=zoneTriangles(z);if(!triangles)return{distance:NaN,t:0,p:a,invalid:true};let best={dist2:Infinity,t:0,p:a};for(const [u,v,w] of triangles){const d=segmentTriangleDistance(a,b,u,v,w);if(d.dist2<best.dist2)best=d}return{distance:Math.sqrt(Math.max(0,best.dist2)),t:best.t,p:best.p}}
-function collisionTests(config=axes){const points=fk(config),tests=[];for(let zi=0;zi<zones.length;zi++){const z=zones[zi];if(!z.enabled||!z.poly||z.poly.length<3)continue;for(let i=0;i<4;i++){const distanceInfo=distanceZone(points[i],points[i+1],z),radius=Math.max(0,Number(config[i].radius)||0),margin=Math.max(0,Number(config[i].margin)||0),limit=radius+margin,clearance=distanceInfo.distance-limit,blocked=!Number.isFinite(clearance)||clearance<=1e-8;tests.push({zone:zi,segment:i,distance:distanceInfo.distance,radius,margin,limit,clearance,blocked,invalid:!!distanceInfo.invalid,hit:{t:distanceInfo.t,p:distanceInfo.p}})}}return tests}
+function shapeRadius(a){const profile=a.profile;if(!Array.isArray(profile)||!profile.length)return Math.max(0,a.radius||0);return Math.max(0,...profile.map(p=>Math.max(Number(p.width)||0,Number(p.height)||0)))}
+function shapeProfile(a){const raw=Array.isArray(a.profile)&&a.profile.length>=2?a.profile:[{t:0,width:a.radius,height:a.radius},{t:1,width:a.radius,height:a.radius}];return raw.slice().sort((a,b)=>a.t-b.t)}
+function drawCustomArm(ctx,name,pa,pb,axis,colorRgb){
+ const profile=shapeProfile(axis);if(!profile.length)return;
+ const dx=pb.x-pa.x,dy=pb.y-pa.y,dz=pb.z-pa.z,len=Math.hypot(dx,dy,dz);if(len<1e-7)return;
+ const d=vec(dx/len,dy/len,dz/len),ref=Math.abs(d.z)<.92?vec(0,0,1):vec(0,1,0);
+ const vx=vec(d.y*ref.z-d.z*ref.y,d.z*ref.x-d.x*ref.z,d.x*ref.y-d.y*ref.x),vlen=Math.hypot(vx.x,vx.y,vx.z);
+ const v=vec(vx.x/vlen,vx.y/vlen,vx.z/vlen),w=vec(d.y*v.z-d.z*v.y,d.z*v.x-d.x*v.z,d.x*v.y-d.y*v.x);
+ const N=16;const rings=profile.map(q=>Array.from({length:N},(_,j)=>{const a=2*Math.PI*j/N;return vec(pa.x+dx*q.t+v.x*q.width*Math.cos(a)+w.x*q.height*Math.sin(a),pa.y+dy*q.t+v.y*q.width*Math.cos(a)+w.y*q.height*Math.sin(a),pa.z+dz*q.t+v.z*q.width*Math.cos(a)+w.z*q.height*Math.sin(a))}));
+ const faces=[];for(let k=0;k<rings.length-1;k++)for(let j=0;j<N;j++){const a=rings[k][j],b=rings[k][(j+1)%N],c=rings[k+1][(j+1)%N],e=rings[k+1][j];faces.push({corners:[a,b,c,e],dep:(depth(a)+depth(b)+depth(c)+depth(e))/4,shade:j})}
+ faces.sort((a,b)=>a.dep-b.dep);
+ for(const f of faces){const pts=f.corners.map(p=>screen(name,project(p,name)));ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.closePath();const light=.67+.30*Math.cos(f.shade*2*Math.PI/N);ctx.fillStyle=`rgba(${colorRgb.map(x=>Math.round(x*light)).join(',')},.93)`;ctx.fill();ctx.strokeStyle='rgba(16,34,55,.35)';ctx.lineWidth=.6;ctx.stroke()}
+}
+function renderCustomShapes(){const root=$('customShapeEditor');if(!root)return;root.innerHTML='';axes.forEach((a,i)=>{const details=document.createElement('details');details.open=i===0;const summary=document.createElement('summary');summary.textContent=`Axe ${i+1} — profil personnalisé (${shapeProfile(a).length} sections)`;details.append(summary);const controls=document.createElement('div');controls.className='buttons';const reset=document.createElement('button');reset.textContent='Profil cylindrique';reset.onclick=()=>{a.profile=null;renderCustomShapes();update()};const add=document.createElement('button');add.textContent='+ Ajouter une section';add.onclick=()=>{const arr=shapeProfile(a);let index=0,gap=-1;for(let k=0;k<arr.length-1;k++){const delta=arr[k+1].t-arr[k].t;if(delta>gap){gap=delta;index=k}}if(gap<.002)return;const mid=(arr[index].t+arr[index+1].t)/2;a.profile=[...arr,{t:mid,width:(arr[index].width+arr[index+1].width)/2,height:(arr[index].height+arr[index+1].height)/2}].sort((a,b)=>a.t-b.t);renderCustomShapes();update()};controls.append(reset,add);details.append(controls);const tab=document.createElement('table');tab.innerHTML='<thead><tr><th>Position %</th><th>Demi-largeur mm</th><th>Demi-hauteur mm</th><th></th></tr></thead>';const body=document.createElement('tbody');const arr=shapeProfile(a);arr.forEach((pt,j)=>{const row=document.createElement('tr');for(const [key,scale] of [['t',100],['width',1],['height',1]]){const cell=document.createElement('td'),inp=document.createElement('input');inp.type='number';inp.step='0.5';inp.style.width='82px';inp.min=key==='t'?'0':'0';inp.max=key==='t'?'100':'5000';inp.value=+(pt[key]*scale).toFixed(3);inp.disabled=key==='t'&&(j===0||j===arr.length-1);inp.onchange=()=>{const value=Number(inp.value)/scale;const min=key==='t'?(arr[j-1]?.t??-1)+.001:0,max=key==='t'?(arr[j+1]?.t??2)-.001:5000;if(!Number.isFinite(value)||value<min||value>max){inp.value=+(pt[key]*scale).toFixed(3);return}a.profile=shapeProfile(a);a.profile[j][key]=value;if(key!=='t')a.radius=shapeRadius(a);update();renderCustomShapes()};cell.append(inp);row.append(cell)}const cell=document.createElement('td'),del=document.createElement('button');del.textContent='×';del.title='Supprimer la section';del.disabled=arr.length<=2||j===0||j===arr.length-1;del.onclick=()=>{a.profile=arr.filter((_,k)=>k!==j);renderCustomShapes();update()};cell.append(del);row.append(cell);body.append(row)});tab.append(body);details.append(tab);root.append(details)})}
+function collisionTests(config=axes){const points=fk(config),tests=[];for(let zi=0;zi<zones.length;zi++){const z=zones[zi];if(!z.enabled||!z.poly||z.poly.length<3)continue;for(let i=0;i<4;i++){const distanceInfo=distanceZone(points[i],points[i+1],z),radius=Math.max(0,shapeRadius(config[i])),margin=Math.max(0,Number(config[i].margin)||0),limit=radius+margin,clearance=distanceInfo.distance-limit,blocked=!Number.isFinite(clearance)||clearance<=1e-8;tests.push({zone:zi,segment:i,distance:distanceInfo.distance,radius,margin,limit,clearance,blocked,invalid:!!distanceInfo.invalid,hit:{t:distanceInfo.t,p:distanceInfo.p}})}}return tests}
 function collisions(config=axes){return collisionTests(config).filter(r=>r.blocked)}
 function sweepMovement(axis,target){
  const initial=axes[axis].angle,diff=target-initial;
@@ -279,7 +631,7 @@ function tryAngles(i,degree){
  }
  update();return !motion.hit;
 }
-function axesUI(){const root=$('axisControls');root.innerHTML='';$('axisSettings').innerHTML='';axes.forEach((a,i)=>{const el=document.createElement('div');el.className='axis';el.innerHTML=`<div class="head"><b style="color:${color[i]}">Axe ${i+1}</b><strong id="value${i}">0°</strong></div><div class="axis-params"><h3>Paramètres de l’axe ${i+1}</h3><div class="grid2"><label class="field">Rotation<select id="type${i}"><option value="H">Horizontale</option><option value="V">Verticale</option></select></label><label style="font-size:12px"><input id="rev${i}" type="checkbox"> Inverser joystick</label></div><div class="joyline"><div class="joy" id="joy${i}"><div class="knob" id="knob${i}"></div></div><div><button id="minus${i}">−</button> <button id="plus${i}">+</button><div class="muted">Joystick : maintenir et décaler<br>vers la gauche / droite</div></div></div><input id="slide${i}" type="range" min="${a.min}" max="${a.max}" step="0.1"><div class="grid2"><label class="field">Angle (°)<input type="number" step="0.1" id="ang${i}"></label><label class="field">Longueur (mm)<input type="number" min="1" id="length${i}" value="${a.length}"></label><label class="field">Rayon physique (mm)<input type="number" min="0" step="0.5" id="radius${i}" value="${a.radius}"></label><label class="field">Marge anticollision (mm)<input type="number" min="0" step="0.5" id="margin${i}" value="${a.margin}"></label><label class="field">Minimum (°)<input type="number" id="min${i}" value="${a.min}"></label><label class="field">Maximum (°)<input type="number" id="max${i}" value="${a.max}"></label></div></div>`;root.append(el);const detail=el.querySelector('.axis-params');const joyLine=el.querySelector('.joyline');el.append(joyLine);const slider=el.querySelector('#slide'+i);el.append(slider);$('axisSettings').append(detail);$('type'+i).value=a.type;$('rev'+i).checked=a.rev;$('type'+i).onchange=e=>{const old=axes[i].type;axes[i].type=e.target.value;if($('block').checked&&collisions().length){axes[i].type=old;e.target.value=old;blockReason='Changement de type refusé : le bras entrerait dans une zone.'}update()};$('rev'+i).onchange=e=>axes[i].rev=e.target.checked;$('slide'+i).oninput=e=>tryAngles(i,+e.target.value);$('ang'+i).onchange=e=>tryAngles(i,+e.target.value);$('length'+i).onchange=e=>{const old=axes[i].length;axes[i].length=Math.max(1,+e.target.value||1);if($('block').checked&&collisions().length){axes[i].length=old;blockReason='Longueur refusée : collision avec une zone.'}e.target.value=axes[i].length;update()};for(const key of ['radius','margin'])$(key+i).onchange=e=>{const before=axes[i][key],value=Number(e.target.value);if(!Number.isFinite(value)||value<0){e.target.value=before;return}axes[i][key]=value;blockReason='';scanToken++;matrix=null;matrixPage=0;$('matrixOutput').textContent='Paramètres physiques modifiés : relancer le calcul de matrice.';$('scanStatus').textContent='Matrice à recalculer avec les nouveaux rayons et marges.';update()};for(const key of ['min','max'])$(key+i).onchange=e=>{axes[i][key]=+e.target.value;if(axes[i].min>axes[i].max)axes[i][key]=key==='min'?axes[i].max:axes[i].min;const previous=axes[i].angle;axes[i].angle=clamp(axes[i].angle,axes[i].min,axes[i].max);if($('block').checked&&collisions().length){axes[i].angle=previous;blockReason='Modification de butée refusée : collision.'}update()};for(const [key,d] of [['minus',-1],['plus',1]])$(key+i).onclick=()=>tryAngles(i,axes[i].angle+d*(axes[i].rev?-1:1));const joy=$('joy'+i),knob=$('knob'+i);let active=false,speed=0,last=0;function change(e){const r=joy.getBoundingClientRect(),offset=clamp((e.clientX-r.left-r.width/2)/(r.width/2),-1,1);speed=offset*50*(axes[i].rev?-1:1);knob.style.transform=`translateX(${offset*19}px)`}function tick(t){if(!active)return;if(last)tryAngles(i,axes[i].angle+speed*Math.min((t-last)/1000,0.06));last=t;requestAnimationFrame(tick)}joy.onpointerdown=e=>{active=true;last=0;joy.setPointerCapture(e.pointerId);change(e);requestAnimationFrame(tick)};joy.onpointermove=e=>{if(active)change(e)};joy.onpointerup=joy.onpointercancel=()=>{active=false;speed=0;last=0;knob.style.transform=''}});syncAxes()}
+function axesUI(){const root=$('axisControls');root.innerHTML='';$('axisSettings').innerHTML='';axes.forEach((a,i)=>{const el=document.createElement('div');el.className='axis';el.innerHTML=`<div class="head"><b style="color:${color[i]}">Axe ${i+1}</b><strong id="value${i}">0°</strong></div><div class="axis-params"><h3>Paramètres de l’axe ${i+1}</h3><div class="grid2"><label class="field">Rotation<select id="type${i}"><option value="H">Horizontale</option><option value="V">Verticale</option></select></label><label style="font-size:12px"><input id="rev${i}" type="checkbox"> Inverser joystick</label></div><div class="joyline"><div class="joy" id="joy${i}"><div class="knob" id="knob${i}"></div></div><div><button id="minus${i}">−</button> <button id="plus${i}">+</button><div class="muted">Joystick : maintenir et décaler<br>vers la gauche / droite</div></div></div><input id="slide${i}" type="range" min="${a.min}" max="${a.max}" step="0.1"><div class="grid2"><label class="field">Angle (°)<input type="number" step="0.1" id="ang${i}"></label><label class="field">Longueur (mm)<input type="number" min="1" id="length${i}" value="${a.length}"></label><label class="field">Rayon physique (mm)<input type="number" min="0" step="0.5" id="radius${i}" value="${a.radius}"></label><label class="field">Marge anticollision (mm)<input type="number" min="0" step="0.5" id="margin${i}" value="${a.margin}"></label><label class="field">Minimum (°)<input type="number" id="min${i}" value="${a.min}"></label><label class="field">Maximum (°)<input type="number" id="max${i}" value="${a.max}"></label></div></div>`;root.append(el);const detail=el.querySelector('.axis-params');const joyLine=el.querySelector('.joyline');el.append(joyLine);const slider=el.querySelector('#slide'+i);el.append(slider);$('axisSettings').append(detail);$('type'+i).value=a.type;$('rev'+i).checked=a.rev;$('type'+i).onchange=e=>{const old=axes[i].type;axes[i].type=e.target.value;if($('block').checked&&collisions().length){axes[i].type=old;e.target.value=old;blockReason='Changement de type refusé : le bras entrerait dans une zone.'}update()};$('rev'+i).onchange=e=>axes[i].rev=e.target.checked;$('slide'+i).oninput=e=>tryAngles(i,+e.target.value);$('ang'+i).onchange=e=>tryAngles(i,+e.target.value);$('length'+i).onchange=e=>{const old=axes[i].length;axes[i].length=Math.max(1,+e.target.value||1);if($('block').checked&&collisions().length){axes[i].length=old;blockReason='Longueur refusée : collision avec une zone.'}e.target.value=axes[i].length;update()};for(const key of ['radius','margin'])$(key+i).onchange=e=>{const before=axes[i][key],value=Number(e.target.value);if(!Number.isFinite(value)||value<0){e.target.value=before;return}axes[i][key]=value;blockReason='';scanToken++;matrix=null;matrixPage=0;$('matrixOutput').textContent='Paramètres physiques modifiés : relancer le calcul de matrice.';$('scanStatus').textContent='Matrice à recalculer avec les nouveaux rayons et marges.';if(key==='radius')axes[i].profile=null;renderCustomShapes();update()};for(const key of ['min','max'])$(key+i).onchange=e=>{axes[i][key]=+e.target.value;if(axes[i].min>axes[i].max)axes[i][key]=key==='min'?axes[i].max:axes[i].min;const previous=axes[i].angle;axes[i].angle=clamp(axes[i].angle,axes[i].min,axes[i].max);if($('block').checked&&collisions().length){axes[i].angle=previous;blockReason='Modification de butée refusée : collision.'}update()};for(const [key,d] of [['minus',-1],['plus',1]])$(key+i).onclick=()=>tryAngles(i,axes[i].angle+d*(axes[i].rev?-1:1));const joy=$('joy'+i),knob=$('knob'+i);let active=false,speed=0,last=0;function change(e){const r=joy.getBoundingClientRect(),offset=clamp((e.clientX-r.left-r.width/2)/(r.width/2),-1,1);speed=offset*50*(axes[i].rev?-1:1);knob.style.transform=`translateX(${offset*19}px)`}function tick(t){if(!active)return;if(last)tryAngles(i,axes[i].angle+speed*Math.min((t-last)/1000,0.06));last=t;requestAnimationFrame(tick)}joy.onpointerdown=e=>{active=true;last=0;joy.setPointerCapture(e.pointerId);change(e);requestAnimationFrame(tick)};joy.onpointermove=e=>{if(active)change(e)};joy.onpointerup=joy.onpointercancel=()=>{active=false;speed=0;last=0;knob.style.transform=''}});syncAxes()}
 function syncAxes(){axes.forEach((a,i)=>{if(!$('ang'+i))return; if($('radius'+i)&&document.activeElement!==$('radius'+i))$('radius'+i).value=a.radius; if($('margin'+i)&&document.activeElement!==$('margin'+i))$('margin'+i).value=a.margin;$('value'+i).textContent=fix(a.angle)+'°';$('ang'+i).value=fix(a.angle);$('slide'+i).min=a.min;$('slide'+i).max=a.max;$('slide'+i).value=a.angle;$('length'+i).value=a.length;$('min'+i).value=a.min;$('max'+i).value=a.max})}
 function newZone(){zones.push({name:'Zone '+(zones.length+1),plane:'XY',range:[-50,150],poly:[{x:80,y:40},{x:150,y:40},{x:150,y:110},{x:80,y:110}],enabled:true});selected=zones.length-1;activeVertex=-1;groupSelection.clear();zoneUI();refreshBulkFaces();update()}
 function zoneUI(){const root=$('zoneEditor');root.innerHTML='';if(!zones.length){root.innerHTML='<p class="muted">Aucune zone. Clique sur Nouvelle zone pour créer un polygone.</p>';return}const select=document.createElement('select');select.id='zoneSelect';zones.forEach((z,i)=>select.insertAdjacentHTML('beforeend',`<option value="${i}">${z.name.replaceAll('<','&lt;')}</option>`));select.value=clamp(selected,0,zones.length-1);root.append(select);const note=document.createElement('p');note.className='muted';note.textContent='Sommets latéraux : dans la vue 3/4, active + Sommet sur côté et clique sur une face visible. Ou utilise le bouton « Ajouter sur cette face » ci-dessous. En mode sommets, glisse C sur le plan de la face ou Alt + glisse pour le sortir du volume. Coordonnées X/Y/Z modifiables ci-dessous.';root.append(note);
@@ -492,7 +844,7 @@ if((['vertex','insert','group','face'].includes(editTool))&&zones[selected]?.ena
 if((editTool==='vertex'||editTool==='sideAdd')&&zones[selected]?.enabled){const z=zones[selected];for(let edge=0;edge<z.poly.length;edge++){const node=sideNode(z,edge),p=node||centerSide(z,edge),q=screen(name,project(p,name));if(editTool==='sideAdd'&&!node){g.beginPath();g.arc(q.x,q.y,5,0,2*Math.PI);g.fillStyle='#78efd0';g.fill();g.strokeStyle='#17334b';g.lineWidth=2;g.stroke()}else if(node){g.beginPath();g.arc(q.x,q.y,9,0,2*Math.PI);g.fillStyle='#5bf5c5';g.fill();g.strokeStyle='#123249';g.lineWidth=2;g.stroke();g.fillStyle='#e2fff7';g.font='bold 11px system-ui';g.fillText('C'+(edge+1),q.x+11,q.y-8)}}}
 const pp=fk();for(let i=0;i<4;i++){
  if(name==='iso'){
-  const rad=Math.max(0,axes[i].radius||0),extra=Math.max(0,axes[i].margin||0);
+  const rad=Math.max(0,shapeRadius(axes[i])),extra=Math.max(0,axes[i].margin||0);
   const rgb=[[78,209,200],[229,181,95],[246,129,139],[175,158,249]][i];
   if(rad+extra>0){
    // Enveloppe de marge : capsule transparente tridimensionnelle.
@@ -500,16 +852,27 @@ const pp=fk();for(let i=0;i<4;i++){
   }
   if(rad>0){
    // Bras physique : capsule opaque en volume.
-   drawCapsule3D(g,name,pp[i],pp[i+1],rad,rgb,0.95,false);
+   drawCustomArm(g,name,pp[i],pp[i+1],axes[i],rgb);
   }else{
    line(project(pp[i],name),project(pp[i+1],name),color[i],5);
   }
  }else{
-  const width=2*((axes[i].radius||0)+(axes[i].margin||0))*zoom*Math.min(w,h)/570;
+  const width=2*(shapeRadius(axes[i])+(axes[i].margin||0))*zoom*Math.min(w,h)/570;
   line(project(pp[i],name),project(pp[i+1],name),'#e5aa6266',Math.max(6,width));
-  line(project(pp[i],name),project(pp[i+1],name),color[i],Math.max(5,2*(axes[i].radius||0)*zoom*Math.min(w,h)/570));
+  line(project(pp[i],name),project(pp[i+1],name),color[i],Math.max(5,2*shapeRadius(axes[i])*zoom*Math.min(w,h)/570));
  }
-}for(let i=0;i<pp.length;i++){const p=screen(name,project(pp[i],name));g.beginPath();g.arc(p.x,p.y,i===0?8:7,0,Math.PI*2);g.fillStyle=i===0?'#f0f7ff':color[Math.max(0,i-1)];g.fill();g.strokeStyle='#07182a';g.lineWidth=1.5;g.stroke();g.font='bold 12px system-ui';g.fillStyle='#f0f7ff';g.fillText('J'+i,p.x+9,p.y-8);if($('showLabels').checked){g.font='10px system-ui';g.fillStyle='#bbd2e8';g.fillText(`${fix(pp[i].x)},${fix(pp[i].y)},${fix(pp[i].z)}`,p.x+10,p.y+6)}}g.font='12px system-ui';g.fillStyle='#8faac2';g.fillText(name==='top'?'X → | Y ↑':name==='side'?'X → | Z ↑':name==='front'?'Y → | Z ↑':'Vue 3/4 : X/Y/Z',9,18)}
+}for(let i=0;i<pp.length;i++){const p=screen(name,project(pp[i],name));g.beginPath();g.arc(p.x,p.y,i===0?8:7,0,Math.PI*2);g.fillStyle=i===0?'#f0f7ff':color[Math.max(0,i-1)];g.fill();g.strokeStyle='#07182a';g.lineWidth=1.5;g.stroke();g.font='bold 12px system-ui';g.fillStyle='#f0f7ff';g.fillText('J'+i,p.x+9,p.y-8);if($('showLabels').checked){g.font='10px system-ui';g.fillStyle='#bbd2e8';g.fillText(`${fix(pp[i].x)},${fix(pp[i].y)},${fix(pp[i].z)}`,p.x+10,p.y+6)}}// Prévisualisation de la zone en cours : géométrie provisoire, sans collision.
+if(zoneDraft?.points.length){
+ const d=zoneDraft,axis=d.plane==='XY'?'z':d.plane==='XZ'?'y':'x';
+ const lower=d.points.map(pt=>d.plane==='XY'?vec(pt.x,pt.y,d.min):d.plane==='XZ'?vec(pt.x,d.min,pt.y):vec(d.min,pt.x,pt.y));
+ const upper=d.points.map(pt=>({...pt,unused:0})).map(pt=>d.plane==='XY'?vec(pt.x,pt.y,d.max):d.plane==='XZ'?vec(pt.x,d.max,pt.y):vec(d.max,pt.x,pt.y));
+ const loops=[lower,upper];
+ g.save();g.strokeStyle='#69f7cc';g.lineWidth=2;g.setLineDash([7,4]);
+ for(const face of loops){const q=face.map(p=>screen(name,project(p,name)));g.beginPath();q.forEach((p,i)=>i?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y));if(face.length>=3)g.closePath();g.stroke();for(let i=0;i<q.length;i++){g.setLineDash([]);g.beginPath();g.arc(q[i].x,q[i].y,5,0,Math.PI*2);g.fillStyle='#70f9cd';g.fill();g.font='bold 11px system-ui';g.fillText('P'+(i+1),q[i].x+7,q[i].y-8);g.setLineDash([7,4])}}
+ for(let i=0;i<lower.length;i++){const a=screen(name,project(lower[i],name)),b=screen(name,project(upper[i],name));g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()}
+ g.restore();
+}
+g.font='12px system-ui';g.fillStyle='#8faac2';g.fillText(name==='top'?'X → | Y ↑':name==='side'?'X → | Z ↑':name==='front'?'Y → | Z ↑':'Vue 3/4 : X/Y/Z',9,18)}
 function convexHull(pts){const a=[...pts].sort((u,v)=>u.x-v.x||u.y-v.y);if(a.length<3)return a;const low=[],high=[];for(const p of a){while(low.length>=2&&cross(low.at(-2),low.at(-1),p)<=0)low.pop();low.push(p)}for(let i=a.length-1;i>=0;i--){const p=a[i];while(high.length>=2&&cross(high.at(-2),high.at(-1),p)<=0)high.pop();high.push(p)}low.pop();high.pop();return low.concat(high)}
 function explain(){const pts=fk();$('positionRows').innerHTML=pts.map((p,i)=>`<tr><td>J${i}${i===4?' (TCP)':''}</td><td>${fix(p.x)}</td><td>${fix(p.y)}</td><td>${fix(p.z)}</td><td>${fix(deg(p.az))}°</td><td>${fix(deg(p.el))}°</td></tr>`).join('');let html=`<div class="explanation"><b>J0 — base</b><br>J0 = (X₀, Y₀, Z₀) = (${fix(pts[0].x)}, ${fix(pts[0].y)}, ${fix(pts[0].z)}) mm.</div>`;for(let i=1;i<5;i++){const a=axes[i-1],p=pts[i],q=pts[i-1],az=deg(p.az),el=deg(p.el);html+=`<div class="explanation"><b style="color:${color[i-1]}">J${i} — Axe ${i} (${a.type==='H'?'horizontal':'vertical'})</b><br>Longueur L${i} = ${fix(a.length)} mm ; angle θ${i} = ${fix(a.angle)}°. ${a.type==='H'?'Rotation autour du Z local (repère mobile).':'Rotation autour du −Y local (repère mobile).'}<br>Azimut réel du segment ψ = ${fix(az)}° ; élévation réelle du segment φ = ${fix(el)}°.<br>ΔX = L·cos(φ)·cos(ψ) = ${fix(p.dx)} mm<br>ΔY = L·cos(φ)·sin(ψ) = ${fix(p.dy)} mm<br>ΔZ = L·sin(φ) = ${fix(p.dz)} mm<br>J${i} = J${i-1} + (ΔX, ΔY, ΔZ)<br>= (${fix(q.x)}, ${fix(q.y)}, ${fix(q.z)}) + (${fix(p.dx)}, ${fix(p.dy)}, ${fix(p.dz)})<br><b>= (${fix(p.x)}, ${fix(p.y)}, ${fix(p.z)}) mm</b></div>`}$('equations').innerHTML=html}
 function liveMathUI(){
@@ -653,7 +1016,46 @@ function updateGroupLabel(){
 $('selectFaceVertices').onclick=()=>{const z=zones[selected];if(!z)return;const value=$('bulkFace').value;groupSelection.clear();if(value.startsWith('side:')){const i=+value.split(':')[1];for(const f of [0,1])for(const j of [i,(i+1)%z.poly.length])groupSelection.add(groupKey(f,j));}else{for(let i=0;i<z.poly.length;i++)groupSelection.add(groupKey(+value,i))}editTool='group';for(const [key,id] of Object.entries(modes))$(id).classList.toggle('active',key==='group');updateGroupLabel();update()};
 $('clearGroup').onclick=()=>{groupSelection.clear();updateGroupLabel();update()};
 $('bulkFace').onchange=()=>{const v=$('bulkFace').value;if(v==='0'||v==='1')$('faceSelect').value=v;updateGroupLabel();update()};
-for(const [mode,id] of Object.entries(modes))$(id).onclick=()=>{editTool=mode;hoverHandle=null;for(const [key,button] of Object.entries(modes))$(button).classList.toggle('active',key===mode);refreshBulkFaces();updateGroupLabel();for(const name of Object.keys(views))drawView(name)};
+for(const [mode,id] of Object.entries(modes))$(id).onclick=()=>{editTool=mode;if(zoneDraft){zoneDraft=null;refreshDraft();$('startPointZone').classList.remove('active')}hoverHandle=null;for(const [key,button] of Object.entries(modes))$(button).classList.toggle('active',key===mode);refreshBulkFaces();updateGroupLabel();for(const name of Object.keys(views))drawView(name)};
+function draftStatus(msg){const el=$('pointBuilderStatus');if(el)el.textContent=msg}
+function draftPlaneCoords(xyz,plane){return plane==='XY'?{x:xyz.x,y:xyz.y}:plane==='XZ'?{x:xyz.x,y:xyz.z}:{x:xyz.y,y:xyz.z}}
+function draftPoint3D(pt,plane,depth){return plane==='XY'?vec(pt.x,pt.y,depth):plane==='XZ'?vec(pt.x,depth,pt.y):vec(depth,pt.x,pt.y)}
+function refreshDraft(){
+ const d=zoneDraft,box=$('pointBuilder'),list=$('pointBuilderList');box.hidden=!d;
+ if(!d){for(const name of Object.keys(views))drawView(name);return}
+ $('pointPlane').value=d.plane;$('pointZoneName').value=d.name;$('pointMin').value=d.min;$('pointMax').value=d.max;
+ list.innerHTML='';const a=d.plane==='XY'?['X','Y']:d.plane==='XZ'?['X','Z']:['Y','Z'];
+ d.points.forEach((pt,i)=>{
+   const row=document.createElement('div');row.className='draft-row';const label=document.createElement('b');label.textContent='P'+(i+1);row.append(label);
+   for(const k of ['x','y']){const tag=document.createElement('label');tag.className='field';tag.textContent=k==='x'?a[0]:a[1];const input=document.createElement('input');input.type='number';input.step='0.1';input.value=pt[k];input.onchange=()=>{const n=Number(input.value);if(Number.isFinite(n)){d.points[i][k]=n;drawDraftViews();draftStatus('P'+(i+1)+' mis à jour.')}else input.value=pt[k]};tag.append(input);row.append(tag)}
+   const remove=document.createElement('button');remove.textContent='Supprimer';remove.onclick=()=>{d.points.splice(i,1);refreshDraft()};row.append(remove);list.append(row)
+ });
+ draftStatus(`${d.points.length} point(s) placés. ${d.points.length<3?'Placer au moins trois sommets.':'Tu peux fermer le contour et créer le volume.'}`);
+ drawDraftViews()
+}
+function drawDraftViews(){for(const name of Object.keys(views))drawView(name)}
+function addDraftPoint(pt){if(!zoneDraft)return;const d=zoneDraft;if(!Number.isFinite(pt.x)||!Number.isFinite(pt.y)){draftStatus('Coordonnées invalides.');return}const last=d.points.at(-1);if(last&&Math.hypot(last.x-pt.x,last.y-pt.y)<0.01){draftStatus('Ce sommet est identique au précédent.');return}d.points.push({x:+pt.x,y:+pt.y});refreshDraft()}
+function startDraft(){zoneDraft={name:'Zone '+(zones.length+1),plane:'XY',min:-50,max:150,points:[]};editTool='point';hoverHandle=null;for(const [k,id] of Object.entries(modes))$(id).classList.remove('active');$('startPointZone').classList.add('active');refreshDraft();$('pointBuilder').scrollIntoView({block:'nearest',behavior:'smooth'})}
+$('startPointZone').onclick=startDraft;
+$('pointPlane').onchange=e=>{if(!zoneDraft)return;const previous=zoneDraft.plane;zoneDraft.points=zoneDraft.points.map(pt=>{const world=draftPoint3D(pt,previous,zoneDraft.min);return draftPlaneCoords(world,e.target.value)});zoneDraft.plane=e.target.value;refreshDraft()};
+$('pointZoneName').onchange=e=>{if(zoneDraft)zoneDraft.name=e.target.value.trim()||'Zone par points'};
+for(const [id,key] of [['pointMin','min'],['pointMax','max']])$(id).onchange=e=>{if(zoneDraft){zoneDraft[key]=Number(e.target.value);drawDraftViews()}};
+$('addPointXYZ').onclick=()=>{if(!zoneDraft)return;const p={x:Number($('pointX').value),y:Number($('pointY').value),z:Number($('pointZ').value)};addDraftPoint(draftPlaneCoords(p,zoneDraft.plane))};
+$('undoPointXYZ').onclick=()=>{if(zoneDraft){zoneDraft.points.pop();refreshDraft()}};
+$('cancelPointXYZ').onclick=()=>{zoneDraft=null;editTool='move';$('startPointZone').classList.remove('active');$('toolMove').classList.add('active');refreshDraft()};
+$('finishPointXYZ').onclick=()=>{
+ if(!zoneDraft)return;const d=zoneDraft;
+ if(d.points.length<3){draftStatus('Il faut au moins 3 sommets.');return}
+ if(!Number.isFinite(d.min)||!Number.isFinite(d.max)||d.max-d.min<0.1){draftStatus('Profondeur minimale et maximale invalides.');return}
+ if(!isSimplePolygon(d.points)){draftStatus('Le contour est invalide : arêtes croisées, sommets répétés ou surface nulle. Corrige les points.');return}
+ // Contrôle de triangulation préalable : éviter de créer un maillage inutilisable.
+ if(!triangulatePoly(d.points)){draftStatus('La triangulation du polygone a échoué. Vérifie les sommets.');return}
+ zones.push({name:d.name,plane:d.plane,range:[d.min,d.max],poly:d.points.map(p=>({...p})),enabled:true});
+ selected=zones.length-1;activeVertex=-1;groupSelection.clear();zoneDraft=null;editTool='vertex';
+ $('startPointZone').classList.remove('active');$('toolVertex').classList.add('active');
+ invalidateZoneEdit();zoneUI();refreshBulkFaces();updateGroupLabel();refreshDraft();update();
+ refreshVertexMessage('Zone créée point par point : sélectionner la face haute ou basse pour déplacer chaque sommet indépendamment.')
+};
 function canvasWorld(name,px,py){const v=views[name],r=v.canvas.getBoundingClientRect(),scale=zoom*Math.min(r.width,r.height)/570;return{x:(px-r.width/2-v.pan.x)/scale,y:(r.height/2+v.pan.y-py)/scale}}
 function viewPlane(name){return name==='top'?'XY':name==='side'?'XZ':'YZ'}
 function findZone(name,p){for(let i=zones.length-1;i>=0;i--){const z=zones[i];if(!z.enabled||z.poly.length<3)continue;const [a,b]=corners(z),hull=convexHull(a.concat(b).map(q=>project(q,name)));if(hull.length>=3&&(insidePoly(p,hull)||hull.some((q,j)=>pointOnEdge(p,q,hull[(j+1)%hull.length]))))return i}return -1}
@@ -793,6 +1195,12 @@ for(const [name,v] of Object.entries(views)){
  c.onpointerdown=e=>{
   const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,p=canvasWorld(name,x,y);
   drag={mode:'pan',x,y,start:p,startPx:x,startPy:y,changed:false};
+  if(editTool==='point'&&zoneDraft&&!e.shiftKey){
+    const expected=zoneDraft.plane==='XY'?'top':zoneDraft.plane==='XZ'?'side':'front';
+    if(name!==expected){draftStatus('Pour le plan '+zoneDraft.plane+', ajoute les points dans la '+(expected==='top'?'vue de dessus':expected==='side'?'vue de côté':'vue de face')+' ou avec les champs XYZ.');drag=null;return}
+    addDraftPoint(p);drag=null;return;
+  }
+
   if(!e.shiftKey&&editTool==='sideAdd'&&selected>=0){const hit=pickLateralSurface(name,x,y)||(name==='iso'?closestSideHandle(name,x,y,false):null);if(hit){const z=zones[selected];z.sideNodes??={};z.sideNodes[hit.edge]=hit.p||centerSide(z,hit.edge);refreshVertexMessage(`${z.name} : C${hit.edge+1} créé sur la face. Modifier sa position par glissement ou dans les coordonnées X/Y/Z.`);refreshZoneDrag();drag=null;return}}
   if(!e.shiftKey&&editTool==='vertex'&&selected>=0){const hit=closestSideHandle(name,x,y,true);if(hit){const z=zones[selected];drag={mode:'sideVertex',zone:z,edge:hit.edge,original:{...z.sideNodes[hit.edge]},basis:lateralFaceBasis(z,hit.edge),startX:x,startY:y,name,x,y,changed:false};c.setPointerCapture(e.pointerId);refreshVertexMessage(`${z.name}: déplacement du sommet latéral C${hit.edge+1}`);return}}
   if(!e.shiftKey&&editTool==='insert'){
@@ -866,8 +1274,11 @@ for(const [name,v] of Object.entries(views)){
  if(name==='iso')c.ondblclick=()=>{orbit={azimuth:0.78,elevation:0.62};v.pan={x:0,y:0};update()}
 }
 $('newZone').onclick=newZone;$('recheck').onclick=update;$('reset').onclick=()=>{for(let i=0;i<axes.length;i++)tryAngles(i,clamp(0,axes[i].min,axes[i].max));update()};let safeBase=[0,0,0];for(const k of ['baseX','baseY','baseZ'])$(k).onchange=()=>{if($('block').checked&&collisions().length){['baseX','baseY','baseZ'].forEach((id,j)=>$(id).value=safeBase[j]);blockReason='Déplacement de la base refusé : collision avec une zone.'}else{safeBase=['baseX','baseY','baseZ'].map(id=>+$(id).value)}update()};for(const k of ['block','showLabels','sweepStep','sweepMM'])$(k).onchange=update;
-$('export').onclick=()=>{const data={version:21,axes,zones,base:[+$('baseX').value,+$('baseY').value,+$('baseZ').value]};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='simulateur_robot_4_axes_zones_points.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)};
-$('import').onclick=()=>$('file').click();$('file').onchange=async e=>{try{const data=JSON.parse(await e.target.files[0].text());if(!Array.isArray(data.axes)||data.axes.length!==4||!data.axes.every(a=>Number.isFinite(a.angle)&&Number.isFinite(a.length)&&a.length>0&&Number.isFinite(a.min)&&Number.isFinite(a.max)&&a.min<=a.max&&a.min<=a.angle&&a.angle<=a.max))throw Error('Axes invalides');if(!Array.isArray(data.zones)||!data.zones.every(z=>['XY','XZ','YZ'].includes(z.plane)&&Array.isArray(z.range)&&z.range.length===2&&z.range.every(Number.isFinite)&&Array.isArray(z.poly)&&z.poly.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y))))throw Error('Zones invalides');axes=data.axes.map(a=>({...a,type:a.type==='V'?'V':'H',radius:Number.isFinite(a.radius)&&a.radius>=0?a.radius:0,margin:Number.isFinite(a.margin)&&a.margin>=0?a.margin:0}));zones=data.zones.map(z=>({...z,enabled:z.enabled!==false}));if(Array.isArray(data.base)&&data.base.length===3&&data.base.every(Number.isFinite)){['baseX','baseY','baseZ'].forEach((k,i)=>$(k).value=data.base[i])}selected=zones.length?0:-1;safeBase=['baseX','baseY','baseZ'].map(id=>+$(id).value);axesUI();zoneUI();addAxisToggles();update()}catch(err){alert('Import refusé : '+err.message)}e.target.value=''};
+$('export').onclick=()=>{const data={version:36,axes,zones,ui:window.robotWorkspaceUI?.get(),view:{orbit,zoom,pan:Object.fromEntries(Object.entries(views).map(([name,v])=>[name,v.pan]))},settings:{block:$('block').checked,showLabels:$('showLabels').checked,sweepStep:+$('sweepStep').value,sweepMM:+$('sweepMM').value,step:+$('step').value,limit:+$('limit').value},selected,base:[+$('baseX').value,+$('baseY').value,+$('baseZ').value]};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='projet_robot_sur_mesure_v36.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)};
+$('import').onclick=()=>$('file').click();$('file').onchange=async e=>{try{const data=JSON.parse(await e.target.files[0].text());if(!Array.isArray(data.axes)||data.axes.length!==4||!data.axes.every(a=>Number.isFinite(a.angle)&&Number.isFinite(a.length)&&a.length>0&&Number.isFinite(a.min)&&Number.isFinite(a.max)&&a.min<=a.max&&a.min<=a.angle&&a.angle<=a.max))throw Error('Axes invalides');if(!Array.isArray(data.zones)||!data.zones.every(z=>['XY','XZ','YZ'].includes(z.plane)&&Array.isArray(z.range)&&z.range.length===2&&z.range.every(Number.isFinite)&&Array.isArray(z.poly)&&z.poly.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y))))throw Error('Zones invalides');axes=data.axes.map(a=>({...a,profile:Array.isArray(a.profile)&&a.profile.length>=2&&a.profile.length<=60&&a.profile.every(p=>Number.isFinite(p.t)&&p.t>=0&&p.t<=1&&Number.isFinite(p.width)&&p.width>=0&&p.width<=5000&&Number.isFinite(p.height)&&p.height>=0&&p.height<=5000)?a.profile:null,type:a.type==='V'?'V':'H',radius:Number.isFinite(a.radius)&&a.radius>=0?a.radius:0,margin:Number.isFinite(a.margin)&&a.margin>=0?a.margin:0}));zones=data.zones.map(z=>({...z,enabled:z.enabled!==false}));if(Array.isArray(data.base)&&data.base.length===3&&data.base.every(Number.isFinite)){['baseX','baseY','baseZ'].forEach((k,i)=>$(k).value=data.base[i])}if(data.view){if(data.view.orbit&&Number.isFinite(data.view.orbit.azimuth)&&Number.isFinite(data.view.orbit.elevation))orbit=data.view.orbit;if(Number.isFinite(data.view.zoom))zoom=clamp(data.view.zoom,.25,5);if(data.view.pan)for(const [name,view] of Object.entries(views)){const pan=data.view.pan[name];if(pan&&Number.isFinite(pan.x)&&Number.isFinite(pan.y))view.pan=pan}}
+ if(data.settings)for(const [key,v] of Object.entries(data.settings)){const el=$(key);if(el){if(el.type==='checkbox')el.checked=!!v;else if(Number.isFinite(v))el.value=v}}
+ selected=zones.length?clamp(Number.isInteger(data.selected)?data.selected:0,0,zones.length-1):-1;safeBase=['baseX','baseY','baseZ'].map(id=>+$(id).value);axesUI();zoneUI();addAxisToggles();renderCustomShapes();window.robotWorkspaceUI?.restore(data.ui);update()}catch(err){alert('Import refusé : '+err.message)}e.target.value=''};
+renderCustomShapes();
 $('stop').onclick=()=>{scanToken++;scanBusy=false;$('scanStatus').textContent='Analyse interrompue (résultats partiels conservés).';showMatrixPage()};
 function angleGrid(a,step){const vals=[];const n=Math.floor((a.max-a.min)/step+1e-9);for(let k=0;k<=n;k++)vals.push(+(a.min+k*step).toFixed(7));if(vals.at(-1)<a.max-1e-7)vals.push(a.max);return vals}
 function matrixAngles(idx,m){const row=[0,0,0,0];for(let i=3;i>=0;i--){row[i]=m.grids[i][idx%m.grids[i].length];idx=Math.floor(idx/m.grids[i].length)}return row}
